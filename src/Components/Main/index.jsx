@@ -1,13 +1,27 @@
-const { Fragment } = require("react")
+const { Fragment, useState } = require("react")
 import Image from "next/image";
 import Taskbar from "../Taskbar";
 import DefaultWallpaper from '../../assets/default-wallpaper.jpg';
-import Icons from "./Icons";
+import Icons from "../Icon";
+import LockScreen from "../Lock";
 
 const Main = () => {
+    const [lock, setLock] = useState(true);
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        setLock(false);
+    }
+
     return (
         <Fragment>
-            <div className="flex flex-col">
+
+            <div onClick={(e) => handleClick(e)} className={(lock ? `block` : 'slidedown absolute -z-20')} >
+                <LockScreen />
+            </div>
+
+
+            <div className={'flex flex-col ' + (lock ? 'hidden' : 'block slideup')}>
                 <div className="overflow-clip">
                     <Image
                         src={DefaultWallpaper}
@@ -18,6 +32,8 @@ const Main = () => {
                 <Icons />
                 <Taskbar />
             </div>
+
+
         </Fragment>
     )
 }

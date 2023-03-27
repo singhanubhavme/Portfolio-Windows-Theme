@@ -1,15 +1,31 @@
 import { Fragment } from "react";
-import Image from "next/image";
+import ThisPC from '../../assets/icons/this-pc.ico';
+import MyDocuments from '../../assets/icons/my-documents.ico';
+import Icon from "./Icon";
 
-const Icon = ({ icon, title }) => {
+const Icons = () => {
     return (
         <Fragment>
-            <div className="p-3 text-center w-fit h-fit flex flex-col">
-                <Image src={icon} alt="desktop icon" className="w-12" />
-                <p className="text-center text-sm m-auto">{title}</p>
+            <div className="icon-col flex flex-row">
+                <div className="desktop-icons text-white">
+                    <Icon icon={MyDocuments} title={'Anubhav'} />
+                    <Icon icon={ThisPC} title={'This PC'} />
+                    <Icon icon={ThisPC} title={'This PC'} />
+                    <Icon icon={ThisPC} title={'This PC'} />
+                    <Icon icon={ThisPC} title={'This PC'} />
+                    <Icon icon={ThisPC} title={'This PC'} />
+                    <Icon icon={ThisPC} title={'This PC'} />
+                </div>
+                <div className="desktop-icons text-white">
+                    <Icon icon={ThisPC} title={'This PC'} />
+                    <Icon icon={ThisPC} title={'This PC'} />
+                    <Icon icon={ThisPC} title={'This PC'} />
+                    <Icon icon={ThisPC} title={'This PC'} />
+                    <Icon icon={ThisPC} title={'This PC'} />
+                </div>
             </div>
         </Fragment>
-    );
+    )
 }
 
-export default Icon;
+export default Icons;
