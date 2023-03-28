@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import moment from 'moment';
 import Image from "next/image";
 import LockScreenWallpaper from '../../assets/lock-screen-wallpaper.png';
@@ -6,7 +6,11 @@ import WifiIcon from '../../assets/icons/wifi-icon.svg';
 import BatteryIcon from '../../assets/icons/battery-icon.svg';
 
 const LockScreen = () => {
-    moment().format();
+
+    useEffect(() => {
+        moment().format();
+    }, []);
+
     return (
         <Fragment>
             <div className="overflow-clip">

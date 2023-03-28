@@ -1,4 +1,4 @@
-const { Fragment, useState } = require("react")
+const { Fragment, useState, useEffect } = require("react")
 import Image from "next/image";
 import Taskbar from "../Taskbar";
 import DefaultWallpaper from '../../assets/default-wallpaper.jpg';
@@ -13,15 +13,39 @@ const Main = () => {
         setLock(false);
     }
 
+    // useEffect(() => {
+    //     const handleContextmenu = e => {
+    //         e.preventDefault();
+    //     }
+    //     document.addEventListener('contextmenu', handleContextmenu);
+    //     return () => {
+    //         document.removeEventListener('contextmenu', handleContextmenu);
+    //     }
+    // }, []);
+
+    useEffect(() => {
+        const onEnterOrSpace = (e) => {
+            if (e.code === 'Enter' || e.code === 'Space') {
+                setLock(false);
+            }
+        }
+        document.addEventListener('keypress', onEnterOrSpace);
+        return () => {
+            document.removeEventListener('enter', onEnterOrSpace);
+        }
+    }, [])
+
+
+
     return (
         <Fragment>
 
-            <div onClick={(e) => handleClick(e)} className={(lock ? `block` : 'slidedown absolute -z-20')} >
+            <div onClick={(e) => handleClick(e)} className={'select-none ' + (lock ? `block` : 'slidedown absolute -z-20')} >
                 <LockScreen />
             </div>
 
 
-            <div className={'flex flex-col ' + (lock ? 'hidden' : 'block slideup')}>
+            <div className={'flex flex-col select-none ' + (lock ? 'hidden' : 'block slideup')}>
                 <div className="overflow-clip">
                     <Image
                         src={DefaultWallpaper}
