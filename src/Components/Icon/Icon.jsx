@@ -4,9 +4,9 @@ import Image from 'next/image';
 const Icon = ({ icon, title }) => {
   return (
     <Fragment>
-      <div className="p-3 text-center w-fit h-fit flex flex-col">
-        <Image src={icon} alt="desktop icon" className="w-12" />
-        <p className="text-center text-sm m-auto">{title}</p>
+      <div className="p-3 text-center w-fit h-fit flex flex-col mx-auto">
+        <Image src={icon} alt="icon" className="w-12 mx-auto" />
+        <p className="text-center text-sm mx-auto pt-1">{title}</p>
       </div>
     </Fragment>
   );

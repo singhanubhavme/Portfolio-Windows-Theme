@@ -5,8 +5,12 @@ import DefaultWallpaper from '../../assets/default-wallpaper.jpg';
 import Icons from '../Icon';
 import LockScreen from '../Lock';
 import StartMenu from '../StartMenu';
+import Code from '../Apps/Code';
+import useOpenAppContext from '@/hooks/use-open-app-hook';
 
 const Main = () => {
+  const { open, setOpen } = useOpenAppContext();
+
   const [lock, setLock] = useState(true);
   const [openStartMenu, setOpenStartMenu] = useState(false);
 
@@ -66,7 +70,7 @@ const Main = () => {
             setOpenStartMenu={setOpenStartMenu}
           />
         )}
-
+        <Code />
         <Icons />
         <Taskbar
           openStartMenu={openStartMenu}
