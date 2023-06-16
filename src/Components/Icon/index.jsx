@@ -50,11 +50,11 @@ const Icons = () => {
           <div onDoubleClick={() => updateOpenStatus('Calculator')}>
             <Icon icon={CalcIcon} title={'Calculator'} />
           </div>
+        </div>
+        <div className="desktop-icons text-white">
           <div onDoubleClick={() => updateOpenStatus('Terminal')}>
             <Icon icon={TerminalIcon} title={'Terminal'} />
           </div>
-        </div>
-        <div className="desktop-icons text-white">
           <div onDoubleClick={() => updateOpenStatus('Chrome')}>
             <Icon icon={ChromeIcon} title={'Chrome'} />
           </div>

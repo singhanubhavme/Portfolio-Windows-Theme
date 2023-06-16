@@ -9,7 +9,7 @@ const Chrome = () => {
 
   return (
     <Fragment>
-      <div className="absolute z-50 w-[100%] h-[calc(100%-48px-33px)]">
+      <div className="absolute z-50 w-[100%] h-[calc(100%-40px-33px)]">
         <div className="bg-[#2D2D2D] h-[33px] w-full">
           <div className="flex flex-row items-center justify-between">
             <div className="text-gray-400 text-sm mx-auto">Google Chrome</div>

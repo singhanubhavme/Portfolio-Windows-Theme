@@ -24,12 +24,12 @@ const Taskbar = ({ openStartMenu, setOpenStartMenu }) => {
 
   return (
     <Fragment>
-      <div className="absolute bottom-0 bg-[#1e1e1e] w-full flex flex-row h-12">
+      <div className="absolute bottom-0 bg-[#1e1e1e] w-full flex flex-row h-10">
         <div className="start flex flex-row">
           <div onClick={() => setOpenStartMenu(!openStartMenu)}>
             <Image
               src={TaskbarIcon}
-              className="w-6 m-3"
+              className="w-5 m-3"
               alt="taskbar icon"
               aria-hidden="true"
             />

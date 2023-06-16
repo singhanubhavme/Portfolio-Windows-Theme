@@ -55,13 +55,13 @@ const TaskIcons = () => {
         <Image src={WifiIcon} className="w-5 m-1.5" alt="wifi icon" />
         <Image
           src={BatteryIcon}
-          className="w-6 m-1.5"
+          className="w-5 m-1.5"
           style={{ filter: 'invert(100%)' }}
           alt="battery icon"
         />
         <Image
           src={SoundIcon}
-          className="w-6 h-6 m-1.5"
+          className="w-5 h-5 m-1.5"
           alt="sound icon"
           style={{ filter: 'invert(100%)' }}
         />
