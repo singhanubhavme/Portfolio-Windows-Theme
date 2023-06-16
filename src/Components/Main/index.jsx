@@ -1,65 +1,80 @@
-const { Fragment, useState, useEffect } = require("react")
-import Image from "next/image";
-import Taskbar from "../Taskbar";
+const { Fragment, useState, useEffect } = require('react');
+import Image from 'next/image';
+import Taskbar from '../Taskbar';
 import DefaultWallpaper from '../../assets/default-wallpaper.jpg';
-import Icons from "../Icon";
-import LockScreen from "../Lock";
+import Icons from '../Icon';
+import LockScreen from '../Lock';
+import StartMenu from '../StartMenu';
 
 const Main = () => {
-    const [lock, setLock] = useState(true);
+  const [lock, setLock] = useState(true);
+  const [openStartMenu, setOpenStartMenu] = useState(false);
 
-    const handleClick = (e) => {
-        e.preventDefault();
+  const handleClick = (e) => {
+    e.preventDefault();
+    setLock(false);
+  };
+
+  // useEffect(() => {
+  //     const handleContextmenu = e => {
+  //         e.preventDefault();
+  //     }
+  //     document.addEventListener('contextmenu', handleContextmenu);
+  //     return () => {
+  //         document.removeEventListener('contextmenu', handleContextmenu);
+  //     }
+  // }, []);
+
+  useEffect(() => {
+    const onEnterOrSpace = (e) => {
+      if (e.code === 'Enter' || e.code === 'Space') {
         setLock(false);
-    }
+      }
+    };
+    document.addEventListener('keypress', onEnterOrSpace);
+    return () => {
+      document.removeEventListener('enter', onEnterOrSpace);
+    };
+  }, []);
 
-    // useEffect(() => {
-    //     const handleContextmenu = e => {
-    //         e.preventDefault();
-    //     }
-    //     document.addEventListener('contextmenu', handleContextmenu);
-    //     return () => {
-    //         document.removeEventListener('contextmenu', handleContextmenu);
-    //     }
-    // }, []);
-
-    useEffect(() => {
-        const onEnterOrSpace = (e) => {
-            if (e.code === 'Enter' || e.code === 'Space') {
-                setLock(false);
-            }
+  return (
+    <Fragment>
+      <div
+        onClick={(e) => handleClick(e)}
+        className={
+          'select-none ' + (lock ? `block` : 'slidedown absolute -z-20')
         }
-        document.addEventListener('keypress', onEnterOrSpace);
-        return () => {
-            document.removeEventListener('enter', onEnterOrSpace);
+      >
+        <LockScreen />
+      </div>
+
+      <div
+        className={
+          'flex flex-col select-none ' + (lock ? 'hidden' : 'block slideup')
         }
-    }, [])
+      >
+        <div className="overflow-clip">
+          <Image
+            src={DefaultWallpaper}
+            alt="windows wallpaper"
+            className="absolute w-screen h-screen -z-10"
+          />
+        </div>
+        {openStartMenu && (
+          <StartMenu
+            openStartMenu={openStartMenu}
+            setOpenStartMenu={setOpenStartMenu}
+          />
+        )}
 
-
-
-    return (
-        <Fragment>
-
-            <div onClick={(e) => handleClick(e)} className={'select-none ' + (lock ? `block` : 'slidedown absolute -z-20')} >
-                <LockScreen />
-            </div>
-
-
-            <div className={'flex flex-col select-none ' + (lock ? 'hidden' : 'block slideup')}>
-                <div className="overflow-clip">
-                    <Image
-                        src={DefaultWallpaper}
-                        alt="windows wallpaper"
-                        className="absolute w-screen h-screen -z-10"
-                    />
-                </div>
-                <Icons />
-                <Taskbar />
-            </div>
-
-
-        </Fragment>
-    )
-}
+        <Icons />
+        <Taskbar
+          openStartMenu={openStartMenu}
+          setOpenStartMenu={setOpenStartMenu}
+        />
+      </div>
+    </Fragment>
+  );
+};
 
 export default Main;

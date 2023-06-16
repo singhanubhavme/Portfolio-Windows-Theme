@@ -55,4 +55,5 @@ body {
     overflow: hidden;
     animation: hide-scroll 3s;
     /* time should be more than highest animation length */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
