@@ -88,7 +88,8 @@ const Main = () => {
       <div
         onClick={(e) => handleClick(e)}
         className={
-          'select-none ' + (lock ? `block` : 'slidedown absolute -z-20')
+          'select-none mx-auto md:w-full' +
+          (lock ? `block` : 'slidedown absolute -z-20')
         }
       >
         <LockScreen />

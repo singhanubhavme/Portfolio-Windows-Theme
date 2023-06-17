@@ -13,8 +13,10 @@ const Lichess = () => {
     <Fragment>
       <div className="absolute z-50 w-[50%] h-[100%] left-1/2 transform -translate-x-1/2">
         <div className="bg-[#2D2D2D] h-[33px] w-full">
-          <div className="flex flex-row items-center justify-between">
-            <div className="text-gray-400 text-sm mx-auto">Lichess</div>
+          <div className="flex flex-row items-center justify-end">
+            <div className="text-gray-400 text-sm mx-auto absolute left-1/2 transform -translate-x-1/2 justify-center">
+              Lichess
+            </div>
             <div className="flex flex-row">
               <Image
                 onClick={() => handleMinimize('Lichess TV')}

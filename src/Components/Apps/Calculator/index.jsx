@@ -28,7 +28,9 @@ const Calculator = () => {
           <div className="flex flex-row items-center justify-between">
             <div className="text-gray-400 text-sm mx-auto flex flex-row justify-between">
               <Image src={CalcIcon} alt="icon" className="w-4 mr-12" />
-              <span>Calculator</span>
+              <span className="absolute left-1/2 transform -translate-x-1/2 justify-center">
+                Calculator
+              </span>
             </div>
             <div className="flex flex-row">
               <Image
