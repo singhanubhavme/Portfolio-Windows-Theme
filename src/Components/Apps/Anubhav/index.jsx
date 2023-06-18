@@ -19,6 +19,7 @@ import SocialsGif from '../../../assets/gif/socials.json';
 
 import Education from './Education';
 import Experience from './Experience';
+import Skills from './Skills';
 
 // import InstaIcon from '../../../assets/socials/instagram.svg';
 // import TwitterIcon from '../../../assets/socials/twitter.svg';
@@ -31,6 +32,7 @@ const Anubhav = () => {
 
   const [showEducation, setShowEducation] = useState(false);
   const [showExperience, setShowExperience] = useState(false);
+  const [showSkills, setShowSkills] = useState(false);
 
   return (
     <Fragment>
@@ -44,6 +46,7 @@ const Anubhav = () => {
             {showExperience && (
               <Experience setShowExperience={setShowExperience} />
             )}
+            {showSkills && <Skills setShowSkills={setShowSkills} />}
             <div className="flex flex-row">
               <Image
                 onClick={() => handleMinimize('Anubhav')}
@@ -77,6 +80,7 @@ const Anubhav = () => {
               content={'All my industry level experience.'}
             />
             <AboutCard
+              onClick={() => setShowSkills(true)}
               title={'Skills'}
               icon={SkillsGif}
               content={'The tech stacks and languages.'}
