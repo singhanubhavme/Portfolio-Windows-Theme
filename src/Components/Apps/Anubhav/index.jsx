@@ -1,7 +1,5 @@
 import { Fragment, useState } from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-
 import Header from './Header';
 import CrossIcon from '../../../assets/icons/cross.svg';
 import MinimizeIcon from '../../../assets/icons/minimize.svg';
@@ -22,6 +20,8 @@ import Experience from './Experience';
 import Skills from './Skills';
 import Resume from './Resume';
 import Contact from './Contact';
+import Social from './Social';
+import Projects from './Projects';
 
 // import InstaIcon from '../../../assets/socials/instagram.svg';
 // import TwitterIcon from '../../../assets/socials/twitter.svg';
@@ -30,13 +30,14 @@ import Contact from './Contact';
 
 const Anubhav = () => {
   const { handleMinimize, handleClose } = useOpenAppContext();
-  const router = useRouter();
 
   const [showEducation, setShowEducation] = useState(false);
   const [showExperience, setShowExperience] = useState(false);
   const [showSkills, setShowSkills] = useState(false);
   const [showResume, setShowResume] = useState(false);
   const [showContact, setShowContact] = useState(false);
+  const [showSocial, setShowSocial] = useState(false);
+  const [showProjects, setShowProjects] = useState(false);
 
   return (
     <Fragment>
@@ -53,6 +54,8 @@ const Anubhav = () => {
             {showSkills && <Skills setShowSkills={setShowSkills} />}
             {showResume && <Resume setShowResume={setShowResume} />}
             {showContact && <Contact setShowContact={setShowContact} />}
+            {showSocial && <Social setShowSocial={setShowSocial} />}
+            {showProjects && <Projects setShowProjects={setShowProjects} />}
             <div className="flex flex-row">
               <Image
                 onClick={() => handleMinimize('Anubhav')}
@@ -100,13 +103,16 @@ const Anubhav = () => {
           </div>
           <div className="flex flex-row justify-center">
             <AboutCard
+              onClick={() => setShowProjects(true)}
               title={'Projects'}
               icon={ProjectsGif}
               content={'Here are some of my projects.'}
             />
 
             <AboutCard
-              onClick={() => router.push('https://blog.anubhavsingh.dev')}
+              onClick={() =>
+                window.open('https://blog.anubhavsingh.dev', '_blank')
+              }
               title={'Blog'}
               icon={BlogGif}
               content={'I write sometimes.'}
@@ -119,6 +125,7 @@ const Anubhav = () => {
               content={'Resume'}
             />
             <AboutCard
+              onClick={() => setShowSocial(true)}
               title={'Socials'}
               icon={SocialsGif}
               content={'Keep Up with me'}

@@ -10,7 +10,7 @@ function Resume({ setShowResume }) {
           <div className="flex flex-col">
             <AiOutlineClose
               onClick={() => setShowResume(false)}
-              className="absolute -right-2 top-2 m-2 h-6 w-6 rounded-full text-white hover:cursor-pointer hover:bg-red-500"
+              className="absolute right-[130px] top-2.5 m-2 h-5 w-5 rounded-full text-white hover:cursor-pointer hover:bg-red-500"
             />
             <embed
               className="h-full w-[100vw]"
