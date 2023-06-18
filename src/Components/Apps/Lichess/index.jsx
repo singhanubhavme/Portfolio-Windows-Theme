@@ -1,10 +1,13 @@
 import { Fragment, useEffect } from 'react';
-import './index.module.css';
 import Image from 'next/image';
 import CrossIcon from '../../../assets/icons/cross.svg';
 import MinimizeIcon from '../../../assets/icons/minimize.svg';
 import RestoreIcon from '../../../assets/icons/restore.svg';
 import useOpenAppContext from '@/hooks/use-open-app-hook';
+
+// .dark.highlight.brown {
+//   text-align: center;
+// }
 
 const Lichess = () => {
   const { handleMinimize, handleClose } = useOpenAppContext();

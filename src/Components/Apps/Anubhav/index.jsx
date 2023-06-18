@@ -1,5 +1,7 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+
 import Header from './Header';
 import CrossIcon from '../../../assets/icons/cross.svg';
 import MinimizeIcon from '../../../assets/icons/minimize.svg';
@@ -15,22 +17,33 @@ import ResumeGif from '../../../assets/gif/resume.json';
 import ProjectsGif from '../../../assets/gif/projects.json';
 import SocialsGif from '../../../assets/gif/socials.json';
 
-import InstaIcon from '../../../assets/socials/instagram.svg';
-import TwitterIcon from '../../../assets/socials/twitter.svg';
-import LinkedinIcon from '../../../assets/socials/linkedin.svg';
-import GithubIcon from '../../../assets/socials/github.svg';
+import Education from './Education';
+import Experience from './Experience';
+
+// import InstaIcon from '../../../assets/socials/instagram.svg';
+// import TwitterIcon from '../../../assets/socials/twitter.svg';
+// import LinkedinIcon from '../../../assets/socials/linkedin.svg';
+// import GithubIcon from '../../../assets/socials/github.svg';
 
 const Anubhav = () => {
   const { handleMinimize, handleClose } = useOpenAppContext();
+  const router = useRouter();
+
+  const [showEducation, setShowEducation] = useState(false);
+  const [showExperience, setShowExperience] = useState(false);
 
   return (
     <Fragment>
-      <div className="absolute z-50 w-[100%] h-[calc(100%-40px-33px)] bg-[#333333]">
+      <div className="bg-[#333333] absolute z-50 w-[100%] h-[calc(100%-40px-33px)]">
         <div className="bg-[#2D2D2D] h-[33px] w-full">
           <div className="flex flex-row items-center justify-end">
             <div className="text-gray-400 text-sm mx-auto absolute left-1/2 transform -translate-x-1/2 justify-center">
               About Anubhav
             </div>
+            {showEducation && <Education setShowEducation={setShowEducation} />}
+            {showExperience && (
+              <Experience setShowExperience={setShowExperience} />
+            )}
             <div className="flex flex-row">
               <Image
                 onClick={() => handleMinimize('Anubhav')}
@@ -52,11 +65,13 @@ const Anubhav = () => {
           <Header />
           <div className="flex flex-row justify-center mt-3">
             <AboutCard
+              onClick={() => setShowEducation(true)}
               title={'Education'}
               icon={EducationGif}
               content={'All my education, from school to college.'}
             />
             <AboutCard
+              onClick={() => setShowExperience(true)}
               title={'Experience'}
               icon={ExperienceGif}
               content={'All my industry level experience.'}
@@ -78,11 +93,14 @@ const Anubhav = () => {
               icon={ProjectsGif}
               content={'Here are some of my projects.'}
             />
+
             <AboutCard
+              onClick={() => router.push('https://blog.anubhavsingh.dev')}
               title={'Blog'}
               icon={BlogGif}
               content={'I write sometimes.'}
             />
+
             <AboutCard title={'Resume'} icon={ResumeGif} content={'Resume'} />
             <AboutCard
               title={'Socials'}

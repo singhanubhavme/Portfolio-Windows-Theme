@@ -104,6 +104,7 @@ function OpenAppProvider({ children }) {
       });
     });
   };
+
   const value = {
     open,
     setOpen,

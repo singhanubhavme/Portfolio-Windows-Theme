@@ -1,9 +1,12 @@
 import Lottie from 'react-lottie';
 
-const AboutCard = ({ title, icon, content }) => {
+const AboutCard = ({ title, icon, content, ...rootDOMAttributes }) => {
   return (
-    <div className="bg-[#3f3f3f] w-[15%] h-[95px] m-4 flex flex-row items-center justify-between rounded-lg">
-      <div className="w-[23%]">
+    <div
+      {...rootDOMAttributes}
+      className="bg-[#3f3f3f] w-[15%] h-[95px] m-4 flex flex-row items-center justify-between rounded-lg hover:cursor-pointer hover:bg-[#3f3f3fbf]"
+    >
+      <div className="w-[23%] ml-4 mr-2">
         <Lottie
           options={{
             loop: true,

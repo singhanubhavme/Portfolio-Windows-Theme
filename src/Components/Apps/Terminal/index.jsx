@@ -1,7 +1,7 @@
 const Terminal = () => {
   return (
     <div>
-      <div>Terminal</div>
+      <div></div>
     </div>
   );
 };
