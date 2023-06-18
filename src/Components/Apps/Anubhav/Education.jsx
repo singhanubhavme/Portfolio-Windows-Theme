@@ -8,33 +8,33 @@ import { FaArrowRight } from 'react-icons/fa';
 const Education = ({ setShowEducation }) => {
   return (
     <div className="absolute z-[999]">
-      <div className="fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster bg-[rgba(0,0,0,.7)]">
+      <div className="h-100 animated fadeIn faster fixed inset-0 z-50 flex w-full items-center justify-center overflow-hidden bg-[rgba(0,0,0,.7)]">
         <Zoom duration={500}>
-          <div className="bg-white w-[70%] h-[70%] relative rounded-md">
+          <div className="relative h-[70%] w-[70%] rounded-md bg-white">
             <AiOutlineClose
               onClick={() => setShowEducation(false)}
-              className="absolute right-0 m-2 w-6 h-6 hover:cursor-pointer hover:bg-red-500 hover:text-white rounded-full"
+              className="absolute right-0 m-2 h-6 w-6 rounded-full hover:cursor-pointer hover:bg-red-500 hover:text-white"
             />
-            <div className="my-8 text-4xl text-center text-[#5540AF] font-[600]">
+            <div className="my-8 text-center text-4xl font-[600] text-[#5540AF]">
               Education
             </div>
             <div className="h-[10px] opacity-0"></div>
 
-            <span className="h-[55%] mt-2 w-[1.5px] bg-gray-600 absolute left-[25%]"></span>
+            <span className="absolute left-[25%] mt-2 h-[55%] w-[1.5px] bg-gray-600"></span>
 
-            <div className="flex flex-row justify-evenly my-4">
+            <div className="my-4 flex flex-row justify-evenly">
               <Image
-                className="rounded-lg w-20 h-20"
+                className="h-20 w-20 rounded-lg"
                 src={Education2Img}
                 alt="college"
               />
               <div className="w-1/2">
-                <span className="text-sm text-gray-400 font-bold">
+                <span className="text-sm font-bold text-gray-400">
                   Sep 2020 - July - 2024
                 </span>
                 <div className="font-3xl font-bold text-[#5540AF]">
-                  <FaArrowRight className="absolute text-[#5540AF] -ml-10 mt-0.5 w-[20px] h-[20px]" />
-                  <span className="w-4 h-4 rounded-full absolute border-2 border-gray-400 left-[25%] transform -translate-x-1/2 bg-white mt-1"></span>
+                  <FaArrowRight className="absolute -ml-10 mt-0.5 h-[20px] w-[20px] text-[#5540AF]" />
+                  <span className="absolute left-[25%] mt-1 h-4 w-4 -translate-x-1/2 transform rounded-full border-2 border-gray-400 bg-white"></span>
                   GRAPHIC ERA DEEMED TO BE UNIVERSITY
                 </div>
                 <div>
@@ -43,38 +43,38 @@ const Education = ({ setShowEducation }) => {
               </div>
             </div>
 
-            <div className="flex flex-row justify-evenly my-4">
+            <div className="my-4 flex flex-row justify-evenly">
               <Image
-                className="rounded-full w-20 h-20"
+                className="h-20 w-20 rounded-full"
                 src={Education1Img}
                 alt="school"
               />
               <div className="w-1/2">
-                <span className="text-sm text-gray-400 font-bold">
+                <span className="text-sm font-bold text-gray-400">
                   Jan 2023 - Feb 2023
                 </span>
                 <div className="font-3xl font-bold text-[#5540AF]">
-                  <FaArrowRight className="absolute text-[#5540AF] -ml-10 mt-0.5 w-[20px] h-[20px]" />
-                  <span className="w-4 h-4 rounded-full absolute border-2 border-gray-400 left-[25%] transform -translate-x-1/2 bg-white mt-1"></span>
+                  <FaArrowRight className="absolute -ml-10 mt-0.5 h-[20px] w-[20px] text-[#5540AF]" />
+                  <span className="absolute left-[25%] mt-1 h-4 w-4 -translate-x-1/2 transform rounded-full border-2 border-gray-400 bg-white"></span>
                   HELIGER BORDEN EDUCATION CENTRE
                 </div>
                 <div>Intermediate</div>
               </div>
             </div>
 
-            <div className="flex flex-row justify-evenly my-4">
+            <div className="my-4 flex flex-row justify-evenly">
               <Image
-                className="rounded-full w-20 h-20"
+                className="h-20 w-20 rounded-full"
                 src={Education1Img}
                 alt="school"
               />
               <div className="w-1/2">
-                <span className="text-sm text-gray-400 font-bold">
+                <span className="text-sm font-bold text-gray-400">
                   Mar 2023 - May 2023
                 </span>
                 <div className="font-3xl font-bold text-[#5540AF]">
-                  <FaArrowRight className="absolute text-[#5540AF] -ml-10 mt-0.5 w-[20px] h-[20px]" />
-                  <span className="w-4 h-4 rounded-full absolute border-2 border-gray-400 left-[25%] transform -translate-x-1/2 bg-white mt-1"></span>
+                  <FaArrowRight className="absolute -ml-10 mt-0.5 h-[20px] w-[20px] text-[#5540AF]" />
+                  <span className="absolute left-[25%] mt-1 h-4 w-4 -translate-x-1/2 transform rounded-full border-2 border-gray-400 bg-white"></span>
                   HELIGER BORDEN EDUCATION CENTRE
                 </div>
                 <div>High School</div>

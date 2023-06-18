@@ -4,9 +4,9 @@ const AboutCard = ({ title, icon, content, ...rootDOMAttributes }) => {
   return (
     <div
       {...rootDOMAttributes}
-      className="bg-[#3f3f3f] w-[15%] h-[95px] m-4 flex flex-row items-center justify-between rounded-lg hover:cursor-pointer hover:bg-[#3f3f3fbf]"
+      className="m-4 flex h-[95px] w-[15%] flex-row items-center justify-between rounded-lg bg-[#3f3f3f] hover:cursor-pointer hover:bg-[#3f3f3fbf]"
     >
-      <div className="w-[23%] ml-4 mr-2">
+      <div className="ml-4 mr-2 w-[23%]">
         <Lottie
           options={{
             loop: true,

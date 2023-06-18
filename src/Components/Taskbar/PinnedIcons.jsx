@@ -7,20 +7,20 @@ import Image from 'next/image';
 const PinnedIcons = () => {
   return (
     <Fragment>
-      <div className="flex flex-row ml-4">
+      <div className="ml-4 flex flex-row">
         <Image
           src={ChromeIcon}
-          className="w-6 ml-2.5 mr-2.5"
+          className="ml-2.5 mr-2.5 w-6"
           alt="chrome icon"
         />
         <Image
           src={VSCodeIcon}
-          className="w-6 ml-2.5 mr-2.5"
+          className="ml-2.5 mr-2.5 w-6"
           alt="vs code icon"
         />
         <Image
           src={LichessIcon}
-          className="w-6 ml-2.5 mr-2.5"
+          className="ml-2.5 mr-2.5 w-6"
           alt="lichess icon"
         />
       </div>

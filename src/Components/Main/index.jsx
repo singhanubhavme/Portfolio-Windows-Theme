@@ -88,7 +88,7 @@ const Main = () => {
       <div
         onClick={(e) => handleClick(e)}
         className={
-          'select-none mx-auto md:w-full' +
+          'mx-auto select-none md:w-full' +
           (lock ? `block` : 'slidedown absolute -z-20')
         }
       >
@@ -97,14 +97,14 @@ const Main = () => {
 
       <div
         className={
-          'flex flex-col select-none ' + (lock ? 'hidden' : 'block slideup')
+          'flex select-none flex-col ' + (lock ? 'hidden' : 'slideup block')
         }
       >
         <div className="overflow-clip">
           <Image
             src={DefaultWallpaper}
             alt="windows wallpaper"
-            className="absolute w-screen h-screen -z-10"
+            className="absolute -z-10 h-screen w-screen"
           />
         </div>
         {openStartMenu && (

@@ -9,14 +9,14 @@ import Image from 'next/image';
 const TaskIcons = () => {
   return (
     <Fragment>
-      <div className="icons flex flex-row justify-center items-center text-center">
+      <div className="icons flex flex-row items-center justify-center text-center">
         <Fragment>
           <Menu as="div" className="relative inline-block text-center">
             <div>
               <Menu.Button>
                 <Image
                   src={ArrowIcon}
-                  className="w-4 m-1.5"
+                  className="m-1.5 w-4"
                   alt="arrow icon"
                   aria-hidden="true"
                 />
@@ -32,7 +32,7 @@ const TaskIcons = () => {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Menu.Items className="absolute bottom-0 w-[105px] mb-10 origin-center rounded-md opacity-80 bg-[#1e1e1e] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <Menu.Items className="absolute bottom-0 mb-10 w-[105px] origin-center rounded-md bg-[#1e1e1e] opacity-80 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                 <div className="py-1">
                   <Menu.Item>
                     {({ active }) => (
@@ -52,16 +52,16 @@ const TaskIcons = () => {
           </Menu>
         </Fragment>
 
-        <Image src={WifiIcon} className="w-5 m-1.5" alt="wifi icon" />
+        <Image src={WifiIcon} className="m-1.5 w-5" alt="wifi icon" />
         <Image
           src={BatteryIcon}
-          className="w-5 m-1.5"
+          className="m-1.5 w-5"
           style={{ filter: 'invert(100%)' }}
           alt="battery icon"
         />
         <Image
           src={SoundIcon}
-          className="w-5 h-5 m-1.5"
+          className="m-1.5 h-5 w-5"
           alt="sound icon"
           style={{ filter: 'invert(100%)' }}
         />

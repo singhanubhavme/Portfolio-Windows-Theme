@@ -24,12 +24,12 @@ const Taskbar = ({ openStartMenu, setOpenStartMenu }) => {
 
   return (
     <Fragment>
-      <div className="absolute bottom-0 bg-[#1e1e1e] w-full flex flex-row h-10">
+      <div className="absolute bottom-0 flex h-10 w-full flex-row bg-[#1e1e1e]">
         <div className="start flex flex-row">
           <div onClick={() => setOpenStartMenu(!openStartMenu)}>
             <Image
               src={TaskbarIcon}
-              className="w-5 m-3"
+              className="m-3 w-5"
               alt="taskbar icon"
               aria-hidden="true"
             />
@@ -44,7 +44,7 @@ const Taskbar = ({ openStartMenu, setOpenStartMenu }) => {
                     onClick={() => updateOpenStatus(`${app.name}`)}
                     key={index}
                     src={app.img}
-                    className={`w-7 py-1.5 box-content px-3 mx-0.5 border-b-4 ${
+                    className={`mx-0.5 box-content w-7 border-b-4 px-3 py-1.5 ${
                       app.open && !app.minimized && 'bg-[#272626]'
                     } `}
                     alt={app.name}
@@ -55,12 +55,12 @@ const Taskbar = ({ openStartMenu, setOpenStartMenu }) => {
           </Fragment>
         </div>
 
-        <div className="end flex flex-row ml-auto">
+        <div className="end ml-auto flex flex-row">
           <TaskIcons />
           <Calender />
           <Image
             src={NotificationIcon}
-            className="w-5 mr-3 my-auto"
+            className="my-auto mr-3 w-5"
             alt="notification icon"
           />
         </div>

@@ -8,13 +8,13 @@ const Header = () => {
         <Image
           src={AnubhavImg}
           alt="anubhav singh"
-          className="w-[10%] mx-auto rounded-full"
+          className="mx-auto w-[10%] rounded-full"
         />
-        <div className="max-w-[60%] mx-auto text-center text-white">
-          <div className="text-2xl py-2">
+        <div className="mx-auto max-w-[60%] text-center text-white">
+          <div className="py-2 text-2xl">
             Hi, I am <span className="text-[#FF8551]"> Anubhav Singh</span>
           </div>
-          <div className="text-lg py-1.5">Full Stack Developer, From INDIA</div>
+          <div className="py-1.5 text-lg">Full Stack Developer, From INDIA</div>
           <div className="pt-2 text-justify">
             As a MERN developer with expertise in Java, and Python, I&apos;m a
             coding aficionado. I love crafting robust and scalable applications

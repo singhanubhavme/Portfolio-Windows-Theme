@@ -31,21 +31,21 @@ const LockScreen = () => {
         <Image
           src={LockScreenWallpaper}
           alt="lock screen wallpaper"
-          className="absolute w-screen h-screen -z-10"
+          className="absolute -z-10 h-screen w-screen"
         />
-        <div className="pl-5 absolute bottom-20 text-white">
+        <div className="absolute bottom-20 pl-5 text-white">
           <div className="text-9xl">{t1}</div>
           <div className="text-5xl">{t2}</div>
         </div>
 
         <Image
           src={WifiIcon}
-          className="w-8 absolute bottom-0 right-0 mr-20 mb-8"
+          className="absolute bottom-0 right-0 mb-8 mr-20 w-8"
           alt="wifi icon"
         />
         <Image
           src={BatteryIcon}
-          className="w-8 absolute bottom-0 right-0 mr-6 mb-10"
+          className="absolute bottom-0 right-0 mb-10 mr-6 w-8"
           style={{ filter: 'invert(100%)' }}
           alt="battery icon"
         />

@@ -34,10 +34,10 @@ const Anubhav = () => {
 
   return (
     <Fragment>
-      <div className="bg-[#333333] absolute z-50 w-[100%] h-[calc(100%-40px-33px)]">
-        <div className="bg-[#2D2D2D] h-[33px] w-full">
+      <div className="absolute z-50 h-[calc(100%-40px-33px)] w-[100%] bg-[#333333]">
+        <div className="h-[33px] w-full bg-[#2D2D2D]">
           <div className="flex flex-row items-center justify-end">
-            <div className="text-gray-400 text-sm mx-auto absolute left-1/2 transform -translate-x-1/2 justify-center">
+            <div className="absolute left-1/2 mx-auto -translate-x-1/2 transform justify-center text-sm text-gray-400">
               About Anubhav
             </div>
             {showEducation && <Education setShowEducation={setShowEducation} />}
@@ -49,21 +49,21 @@ const Anubhav = () => {
                 onClick={() => handleMinimize('Anubhav')}
                 src={MinimizeIcon}
                 alt="icon"
-                className="w-6 m-1 mx-3"
+                className="m-1 mx-3 w-6"
               />
-              <Image src={RestoreIcon} alt="icon" className="w-3 m-1 mx-3" />
+              <Image src={RestoreIcon} alt="icon" className="m-1 mx-3 w-3" />
               <Image
                 onClick={() => handleClose('Anubhav')}
                 src={CrossIcon}
                 alt="icon"
-                className="w-6 m-1 mx-3 hover:bg-red-700"
+                className="m-1 mx-3 w-6 hover:bg-red-700"
               />
             </div>
           </div>
         </div>
-        <div className="bg-[#333333] h-full">
+        <div className="h-full bg-[#333333]">
           <Header />
-          <div className="flex flex-row justify-center mt-3">
+          <div className="mt-3 flex flex-row justify-center">
             <AboutCard
               onClick={() => setShowEducation(true)}
               title={'Education'}

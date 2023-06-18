@@ -6,7 +6,7 @@ const Calender = () => {
 
   return (
     <Fragment>
-      <div className="text-white text-sm text-center mr-5 ml-4">
+      <div className="ml-4 mr-5 text-center text-sm text-white">
         <div className="">{moment().format('hh:mm A')}</div>
         <div className="">{moment().format('L')}</div>
       </div>
