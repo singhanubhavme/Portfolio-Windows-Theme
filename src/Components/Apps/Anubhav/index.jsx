@@ -20,6 +20,8 @@ import SocialsGif from '../../../assets/gif/socials.json';
 import Education from './Education';
 import Experience from './Experience';
 import Skills from './Skills';
+import Resume from './Resume';
+import Contact from './Contact';
 
 // import InstaIcon from '../../../assets/socials/instagram.svg';
 // import TwitterIcon from '../../../assets/socials/twitter.svg';
@@ -33,6 +35,8 @@ const Anubhav = () => {
   const [showEducation, setShowEducation] = useState(false);
   const [showExperience, setShowExperience] = useState(false);
   const [showSkills, setShowSkills] = useState(false);
+  const [showResume, setShowResume] = useState(false);
+  const [showContact, setShowContact] = useState(false);
 
   return (
     <Fragment>
@@ -47,6 +51,8 @@ const Anubhav = () => {
               <Experience setShowExperience={setShowExperience} />
             )}
             {showSkills && <Skills setShowSkills={setShowSkills} />}
+            {showResume && <Resume setShowResume={setShowResume} />}
+            {showContact && <Contact setShowContact={setShowContact} />}
             <div className="flex flex-row">
               <Image
                 onClick={() => handleMinimize('Anubhav')}
@@ -86,6 +92,7 @@ const Anubhav = () => {
               content={'The tech stacks and languages.'}
             />
             <AboutCard
+              onClick={() => setShowContact(true)}
               title={'Contact'}
               icon={ContactGif}
               content={'Contact Me'}
@@ -105,7 +112,12 @@ const Anubhav = () => {
               content={'I write sometimes.'}
             />
 
-            <AboutCard title={'Resume'} icon={ResumeGif} content={'Resume'} />
+            <AboutCard
+              onClick={() => setShowResume(true)}
+              title={'Resume'}
+              icon={ResumeGif}
+              content={'Resume'}
+            />
             <AboutCard
               title={'Socials'}
               icon={SocialsGif}

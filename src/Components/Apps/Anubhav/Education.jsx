@@ -10,12 +10,12 @@ const Education = ({ setShowEducation }) => {
     <div className="absolute z-[999]">
       <div className="h-100 animated fadeIn faster fixed inset-0 z-50 flex w-full items-center justify-center overflow-hidden bg-[rgba(0,0,0,.7)]">
         <Zoom duration={500}>
-          <div className="relative h-[70%] w-[70%] rounded-md bg-white">
+          <div className="relative h-[70%] w-[70%] rounded-md bg-gray-900">
             <AiOutlineClose
               onClick={() => setShowEducation(false)}
-              className="absolute right-0 m-2 h-6 w-6 rounded-full hover:cursor-pointer hover:bg-red-500 hover:text-white"
+              className="absolute right-0 m-2 h-6 w-6 rounded-full text-white hover:cursor-pointer hover:bg-red-500"
             />
-            <div className="my-8 text-center text-4xl font-[600] text-[#5540AF]">
+            <div className="my-8 text-center text-4xl font-[600] text-white">
               Education
             </div>
             <div className="h-[10px] opacity-0"></div>
@@ -37,7 +37,7 @@ const Education = ({ setShowEducation }) => {
                   <span className="absolute left-[25%] mt-1 h-4 w-4 -translate-x-1/2 transform rounded-full border-2 border-gray-400 bg-white"></span>
                   GRAPHIC ERA DEEMED TO BE UNIVERSITY
                 </div>
-                <div>
+                <div className="text-white">
                   Bachelor of Technology in Computer Science Engineering
                 </div>
               </div>
@@ -58,7 +58,7 @@ const Education = ({ setShowEducation }) => {
                   <span className="absolute left-[25%] mt-1 h-4 w-4 -translate-x-1/2 transform rounded-full border-2 border-gray-400 bg-white"></span>
                   HELIGER BORDEN EDUCATION CENTRE
                 </div>
-                <div>Intermediate</div>
+                <div className="text-white">Intermediate</div>
               </div>
             </div>
 
@@ -77,7 +77,7 @@ const Education = ({ setShowEducation }) => {
                   <span className="absolute left-[25%] mt-1 h-4 w-4 -translate-x-1/2 transform rounded-full border-2 border-gray-400 bg-white"></span>
                   HELIGER BORDEN EDUCATION CENTRE
                 </div>
-                <div>High School</div>
+                <div className="text-white">High School</div>
               </div>
             </div>
           </div>

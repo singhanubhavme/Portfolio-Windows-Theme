@@ -11,12 +11,12 @@ function Experience({ setShowExperience }) {
     <div className="absolute z-[999]">
       <div className="h-100 animated fadeIn faster fixed inset-0 z-50 flex w-full items-center justify-center overflow-hidden bg-[rgba(0,0,0,.7)]">
         <Zoom duration={500}>
-          <div className="relative h-[70%] w-[70%] rounded-md bg-white">
+          <div className="relative h-[70%] w-[70%] rounded-md bg-gray-900">
             <AiOutlineClose
               onClick={() => setShowExperience(false)}
-              className="absolute right-0 m-2 h-6 w-6 rounded-full hover:cursor-pointer hover:bg-red-500 hover:text-white"
+              className="absolute right-0 m-2 h-6 w-6 rounded-full text-white hover:cursor-pointer hover:bg-red-500"
             />
-            <div className="my-8 text-center text-4xl font-[600] text-[#5540AF]">
+            <div className="my-8 text-center text-4xl font-[600] text-white">
               Here&apos;s what I have done
             </div>
             <div className="h-[10px] opacity-0"></div>
@@ -38,7 +38,7 @@ function Experience({ setShowExperience }) {
                 <div className="font-3xl font-bold text-[#5540AF]">
                   WEB3 DEVELOPER
                 </div>
-                <div>
+                <div className="text-white">
                   At Tecksteck Solutions, I worked as a WEB3 DEVELOPER,
                   developing cutting-edge blockchain solutions.
                 </div>
@@ -60,7 +60,7 @@ function Experience({ setShowExperience }) {
                 <div className="font-3xl font-bold text-[#5540AF]">
                   FRONTEND DEVELOPER
                 </div>
-                <div>
+                <div className="text-white">
                   At Jooz Online, I worked as a FRONTEND DEVELOPER, developing
                   Food Delivery Mobile based website using ReactJS.
                 </div>
@@ -82,7 +82,7 @@ function Experience({ setShowExperience }) {
                 <div className="font-3xl font-bold text-[#5540AF]">
                   FULL STACK DEVELOPER
                 </div>
-                <div>
+                <div className="text-white">
                   At CraftIndika, I worked as a FULL STACK MERN DEVELOPER, where
                   I was working on the E-Commerce solution for the company,
                   creating seamless experiences for users.

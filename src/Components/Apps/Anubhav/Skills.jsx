@@ -100,7 +100,7 @@ function Skills({ setShowSkills }) {
     <div className="absolute z-[999]">
       <div className="h-100 animated fadeIn faster fixed inset-0 z-50 flex w-full items-center justify-center overflow-hidden bg-[rgba(0,0,0,.7)]">
         <Zoom duration={500}>
-          <div className="relative h-[70%] w-[70%] rounded-md bg-[#142850]">
+          <div className="relative h-[70%] w-[70%] rounded-md bg-gray-900">
             <AiOutlineClose
               onClick={() => setShowSkills(false)}
               className="absolute right-0 m-2 h-6 w-6 rounded-full text-white hover:cursor-pointer hover:bg-red-500"
