@@ -109,5 +109,9 @@ body {
 
 .svgIcon {
     animation: shake 4s linear infinite;
+}
 
+
+.swiper-button-next, .swiper-button-prev, .swiper-button-disabled {
+    color: #FF8551 !important;
 }

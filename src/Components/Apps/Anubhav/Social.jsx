@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import Zoom from 'react-reveal/Zoom';
 import { AiOutlineClose } from 'react-icons/ai';
 import SocialSvg from '../../../assets/SocialSvg';
-import Image from 'next/image';
 
 function Social({ setShowSocial }) {
   return (
@@ -19,7 +18,12 @@ function Social({ setShowSocial }) {
             </div>
             <div>
               <div className="flex items-center justify-center space-x-3">
-                <button className="inline-flex items-center space-x-2 rounded bg-blue-500 px-4 py-2 font-semibold text-white">
+                <button
+                  onClick={() =>
+                    window.open('https://fb.com/singhanubhavme', '_blank')
+                  }
+                  className="inline-flex items-center space-x-2 rounded bg-blue-500 px-4 py-2 font-semibold text-white"
+                >
                   <svg
                     className="h-5 w-5 fill-current"
                     role="img"
@@ -30,7 +34,12 @@ function Social({ setShowSocial }) {
                   </svg>
                   <span>Facebook</span>
                 </button>
-                <button className="inline-flex items-center space-x-2 rounded bg-blue-300 px-4 py-2 font-semibold text-white">
+                <button
+                  onClick={() =>
+                    window.open('https://twitter.com/anubhavsinghdev', '_blank')
+                  }
+                  className="inline-flex items-center space-x-2 rounded bg-blue-300 px-4 py-2 font-semibold text-white"
+                >
                   <svg
                     className="h-5 w-5 fill-current"
                     role="img"
@@ -41,7 +50,15 @@ function Social({ setShowSocial }) {
                   </svg>
                   <span>Twitter</span>
                 </button>
-                <button className="inline-flex items-center space-x-2 rounded bg-red-500 px-4 py-2 font-semibold text-white">
+                <button
+                  onClick={() =>
+                    window.open(
+                      'https://instagram.com/anubhavsinghdev',
+                      '_blank'
+                    )
+                  }
+                  className="inline-flex items-center space-x-2 rounded bg-red-500 px-4 py-2 font-semibold text-white"
+                >
                   <svg
                     className="h-6 w-6 p-0"
                     xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +118,12 @@ function Social({ setShowSocial }) {
                   <span>Instagram</span>
                 </button>
 
-                <button className="inline-flex items-center space-x-2 rounded bg-pink-600 px-4 py-2 font-semibold text-white">
+                <button
+                  onClick={() =>
+                    window.open('https://github.com/singhanubhavme', '_blank')
+                  }
+                  className="inline-flex items-center space-x-2 rounded bg-pink-600 px-4 py-2 font-semibold text-white"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -113,7 +135,15 @@ function Social({ setShowSocial }) {
                   <span>Github</span>
                 </button>
 
-                <button className="inline-flex items-center space-x-2 rounded bg-[#C38154] px-4 py-2 font-semibold text-white">
+                <button
+                  onClick={() =>
+                    window.open(
+                      'https://linkedin.com/in/anubhavsinghdev',
+                      '_blank'
+                    )
+                  }
+                  className="inline-flex items-center space-x-2 rounded bg-[#C38154] px-4 py-2 font-semibold text-white"
+                >
                   <svg
                     className="h-5 w-5"
                     xmlns="http://www.w3.org/2000/svg"

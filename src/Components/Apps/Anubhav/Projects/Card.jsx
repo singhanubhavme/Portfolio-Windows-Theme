@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 function Card({ project, index, colors }) {
   return (
-    <div className="mx-4 min-h-[400px] w-[300px] overflow-hidden rounded-lg bg-white">
+    <div className="mx-auto min-h-[400px] w-[300px] overflow-hidden rounded-lg bg-white">
       <Image
         className="h-[180px] w-full"
         src={project.img}
