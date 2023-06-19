@@ -1,3 +1,4 @@
+import useOpenAppContext from '@/hooks/use-open-app-hook';
 import { useState, useEffect } from 'react';
 import { Menu, Item, Separator, Submenu } from 'react-contexify';
 import {
@@ -10,6 +11,8 @@ import { SiHashnode } from 'react-icons/si';
 
 function CustomContextMenu({ handleItemClick }) {
   const [isFullScreen, setIsFullScreen] = useState(false);
+  const [changeBg, setChangeBg] = useState(true);
+  const { open } = useOpenAppContext();
 
   useEffect(() => {
     function onFullscreenChange() {
@@ -22,11 +25,23 @@ function CustomContextMenu({ handleItemClick }) {
       document.removeEventListener('fullscreenchange', onFullscreenChange);
   }, []);
 
+  useEffect(() => {
+    setChangeBg(true);
+    for (let i = 0; i < open.length; i++) {
+      if (open[i].open === true) {
+        setChangeBg(false);
+        break;
+      }
+    }
+  }, [open]);
+
   return (
     <Menu id={'main-context'}>
-      <Item id="change-bg" onClick={handleItemClick}>
-        🎨 Change Background
-      </Item>
+      {changeBg && (
+        <Item id="change-bg" onClick={handleItemClick}>
+          🎨 Change Background
+        </Item>
+      )}
       {!isFullScreen ? (
         <Item id="enter" onClick={() => document.body.requestFullscreen()}>
           ⏩ Enter Full Screen

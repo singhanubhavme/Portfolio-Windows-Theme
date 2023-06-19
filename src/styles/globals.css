@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap'); */
-
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
+*/
 /* body {
     font-family: 'Open Sans', sans-serif;
 } */
@@ -126,10 +126,4 @@ body {
     --contexify-activeRightSlot-color: #fff !important;
     --contexify-arrow-color: #6f6e77 !important;
     --contexify-activeArrow-color: #fff !important;
-}
-
-.react-contexify__submenu.react-contexify__item--has-submenu:before {
-    content: '\f013' !important;
-    font-family: FontAwesome !important;
-    margin-right: 0.5rem !important;
 }
