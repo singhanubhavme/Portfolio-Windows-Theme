@@ -1,7 +1,7 @@
-const { Fragment, useState, useEffect } = require('react');
+import { Fragment, useState, useEffect } from 'react';
+// import { ContextMenuTrigger, ContextMenu, MenuItem } from 'react-contextmenu';
 import Image from 'next/image';
 import Taskbar from '../Taskbar';
-import DefaultWallpaper from '../../assets/default-wallpaper.jpg';
 import Icons from '../Icon';
 import LockScreen from '../Lock';
 import StartMenu from '../StartMenu';
@@ -18,9 +18,33 @@ import Terminal from '../Apps/Terminal';
 import Chrome from '../Apps/Chrome';
 import Notepad from '../Apps/Notepad';
 import Lichess from '../Apps/Lichess';
+import CustomContextMenu from './CustomContextMenu';
+import { useContextMenu } from 'react-contexify';
+import 'react-contexify/ReactContexify.css';
+
+import Wallpaper1 from '../../assets/walls/w1.jpg';
+import Wallpaper2 from '../../assets/walls/w2.jpg';
+import Wallpaper3 from '../../assets/walls/w3.jpg';
+import Wallpaper4 from '../../assets/walls/w4.jpg';
+import Wallpaper5 from '../../assets/walls/w5.jpg';
+import Wallpaper6 from '../../assets/walls/w6.jpg';
+import Wallpaper7 from '../../assets/walls/w7.jpg';
+import Wallpaper8 from '../../assets/walls/w8.jpg';
+
+const walls = [
+  Wallpaper1,
+  Wallpaper2,
+  Wallpaper3,
+  Wallpaper4,
+  Wallpaper5,
+  Wallpaper6,
+  Wallpaper7,
+  Wallpaper8,
+];
 
 const Main = () => {
   const { open, setOpen } = useOpenAppContext();
+  const [currentBg, setCurrentBg] = useState(0);
 
   const [lock, setLock] = useState(false);
   const [openStartMenu, setOpenStartMenu] = useState(false);
@@ -29,16 +53,6 @@ const Main = () => {
     e.preventDefault();
     setLock(false);
   };
-
-  // useEffect(() => {
-  //     const handleContextmenu = e => {
-  //         e.preventDefault();
-  //     }
-  //     document.addEventListener('contextmenu', handleContextmenu);
-  //     return () => {
-  //         document.removeEventListener('contextmenu', handleContextmenu);
-  //     }
-  // }, []);
 
   useEffect(() => {
     const onEnterOrSpace = (e) => {
@@ -83,8 +97,38 @@ const Main = () => {
       }
     });
 
+  const { show } = useContextMenu({
+    id: 'main-context',
+  });
+
+  function handleContextMenu(event) {
+    show({
+      event,
+      props: {
+        key: 'value',
+      },
+    });
+  }
+
+  const handleItemClick = ({ id, event, props }) => {
+    switch (id) {
+      case 'change-bg':
+        currentBg === walls.length - 1
+          ? setCurrentBg(0)
+          : setCurrentBg(currentBg + 1);
+        break;
+      case 'reload':
+        window.location.reload();
+        break;
+      default:
+        console.log(event, props);
+    }
+  };
+
   return (
-    <Fragment>
+    <div onContextMenu={handleContextMenu}>
+      <CustomContextMenu handleItemClick={handleItemClick} />
+
       <div
         onClick={(e) => handleClick(e)}
         className={
@@ -102,7 +146,7 @@ const Main = () => {
       >
         <div className="overflow-clip">
           <Image
-            src={DefaultWallpaper}
+            src={walls[currentBg]}
             alt="windows wallpaper"
             className="absolute -z-10 h-screen w-screen"
           />
@@ -123,14 +167,13 @@ const Main = () => {
             )}
           </div>
         ))}
-
         <Icons />
         <Taskbar
           openStartMenu={openStartMenu}
           setOpenStartMenu={setOpenStartMenu}
         />
       </div>
-    </Fragment>
+    </div>
   );
 };
 

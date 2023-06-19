@@ -115,3 +115,21 @@ body {
 .swiper-button-next, .swiper-button-prev, .swiper-button-disabled {
     color: #FF8551 !important;
 }
+
+:root {
+    --contexify-menu-bgColor: rgba(40, 40, 40, .98) !important;
+    --contexify-separator-color: #726e6e !important;
+    --contexify-item-color: #fff !important;
+    --contexify-activeItem-color: #fff !important;
+    --contexify-activeItem-bgColor: #3a3e41 !important;
+    --contexify-rightSlot-color: #6f6e77 !important;
+    --contexify-activeRightSlot-color: #fff !important;
+    --contexify-arrow-color: #6f6e77 !important;
+    --contexify-activeArrow-color: #fff !important;
+}
+
+.react-contexify__submenu.react-contexify__item--has-submenu:before {
+    content: '\f013' !important;
+    font-family: FontAwesome !important;
+    margin-right: 0.5rem !important;
+}
