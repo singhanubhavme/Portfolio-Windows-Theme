@@ -6,12 +6,8 @@ import WifiIcon from '../../assets/icons/wifi-icon.svg';
 import BatteryIcon from '../../assets/icons/battery-icon.svg';
 
 const LockScreen = () => {
-  const [t1, setT1] = useState('');
-  const [t2, setT2] = useState('');
-
-  useEffect(() => {
-    moment().format();
-  }, []);
+  const [t1, setT1] = useState(moment().format('HH:mm'));
+  const [t2, setT2] = useState(moment().format('dddd Mo MMMM'));
 
   useEffect(() => {
     setT1(moment().format('HH:mm'));
@@ -34,8 +30,8 @@ const LockScreen = () => {
           className="absolute -z-10 h-screen w-screen"
         />
         <div className="absolute bottom-20 pl-5 text-white">
-          <div className="text-9xl">{t1}</div>
-          <div className="text-5xl">{t2}</div>
+          <div className="text-9xl">{t1 && t1}</div>
+          <div className="text-5xl">{t2 && t2}</div>
         </div>
 
         <Image

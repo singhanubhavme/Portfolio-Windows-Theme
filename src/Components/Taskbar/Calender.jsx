@@ -1,14 +1,28 @@
-import { Fragment, useEffect } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import moment from 'moment';
 
 const Calender = () => {
-  moment().format();
+  const [t1, setT1] = useState(moment().format('hh:mm A'));
+  const [t2, setT2] = useState(moment().format('DD-MM-YYYY'));
+
+  useEffect(() => {
+    setT1(moment().format('hh:mm A'));
+    setT2(moment().format('DD-MM-YYYY'));
+    const id = setInterval(() => {
+      setT1(moment().format('hh:mm A'));
+      setT2(moment().format('DD-MM-YYYY'));
+    }, 1000);
+
+    return () => {
+      clearInterval(id);
+    };
+  }, []);
 
   return (
     <Fragment>
       <div className="ml-4 mr-5 text-center text-sm text-white">
-        <div className="">{moment().format('hh:mm A')}</div>
-        <div className="">{moment().format('L')}</div>
+        <div className="">{t1}</div>
+        <div className="">{t2}</div>
       </div>
     </Fragment>
   );

@@ -1,12 +1,11 @@
 import { Fragment, useState, useEffect } from 'react';
-// import { ContextMenuTrigger, ContextMenu, MenuItem } from 'react-contextmenu';
+import useOpenAppContext from '@/hooks/use-open-app-hook';
 import Image from 'next/image';
 import Taskbar from '../Taskbar';
 import Icons from '../Icon';
 import LockScreen from '../Lock';
 import StartMenu from '../StartMenu';
 import Code from '../Apps/Code';
-import useOpenAppContext from '@/hooks/use-open-app-hook';
 import Fade from 'react-reveal/Fade';
 import Anubhav from '../Apps/Anubhav';
 import ThisPC from '../Apps/ThisPC';
@@ -120,16 +119,18 @@ const Main = () => {
       case 'reload':
         window.location.reload();
         break;
+      case 'lock':
+        setLock(true);
+        break;
       default:
         console.log(event, props);
     }
   };
 
   return (
-    <div onContextMenu={handleContextMenu}>
-      <CustomContextMenu handleItemClick={handleItemClick} />
-
+    <Fragment>
       <div
+        onContextMenu={() => e.preventDefault()}
         onClick={(e) => handleClick(e)}
         className={
           'mx-auto select-none md:w-full' +
@@ -139,41 +140,45 @@ const Main = () => {
         <LockScreen />
       </div>
 
-      <div
-        className={
-          'flex select-none flex-col ' + (lock ? 'hidden' : 'slideup block')
-        }
-      >
-        <div className="overflow-clip">
-          <Image
-            src={walls[currentBg]}
-            alt="windows wallpaper"
-            className="absolute -z-10 h-screen w-screen"
-          />
-        </div>
-        {openStartMenu && (
-          <StartMenu
+      <div onContextMenu={handleContextMenu}>
+        <CustomContextMenu handleItemClick={handleItemClick} />
+
+        <div
+          className={
+            'flex select-none flex-col ' + (lock ? 'hidden' : 'slideup block')
+          }
+        >
+          <div className="overflow-clip">
+            <Image
+              src={walls[currentBg]}
+              alt="windows wallpaper"
+              className="absolute -z-10 h-screen w-screen"
+            />
+          </div>
+          {openStartMenu && (
+            <StartMenu
+              openStartMenu={openStartMenu}
+              setOpenStartMenu={setOpenStartMenu}
+            />
+          )}
+
+          {open.map((app) => (
+            <div key={app.name}>
+              {app.open && !app.minimized && (
+                <Fade duration={500}>
+                  <Fragment>{openedApps}</Fragment>
+                </Fade>
+              )}
+            </div>
+          ))}
+          <Icons />
+          <Taskbar
             openStartMenu={openStartMenu}
             setOpenStartMenu={setOpenStartMenu}
           />
-        )}
-
-        {open.map((app) => (
-          <div key={app.name}>
-            {app.open && !app.minimized && (
-              <Fade duration={500}>
-                <Fragment>{openedApps}</Fragment>
-              </Fade>
-            )}
-          </div>
-        ))}
-        <Icons />
-        <Taskbar
-          openStartMenu={openStartMenu}
-          setOpenStartMenu={setOpenStartMenu}
-        />
+        </div>
       </div>
-    </div>
+    </Fragment>
   );
 };
 

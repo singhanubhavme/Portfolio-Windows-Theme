@@ -51,7 +51,9 @@ function CustomContextMenu({ handleItemClick }) {
           ⏪ Exit Full Screen
         </Item>
       )}
-
+      <Item id="lock" onClick={handleItemClick}>
+        🔒 Lock
+      </Item>
       <Item id="reload" onClick={handleItemClick}>
         🔄 Reset
       </Item>
