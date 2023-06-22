@@ -29,6 +29,7 @@ import Wallpaper5 from '../../assets/walls/w5.jpg';
 import Wallpaper6 from '../../assets/walls/w6.jpg';
 import Wallpaper7 from '../../assets/walls/w7.jpg';
 import Wallpaper8 from '../../assets/walls/w8.jpg';
+import SmallScreenSize from './SmallScreenSize';
 
 const walls = [
   Wallpaper1,
@@ -129,53 +130,56 @@ const Main = () => {
 
   return (
     <Fragment>
-      <div
-        onContextMenu={() => e.preventDefault()}
-        onClick={(e) => handleClick(e)}
-        className={
-          'mx-auto select-none md:w-full' +
-          (lock ? `block` : 'slidedown absolute -z-20')
-        }
-      >
-        <LockScreen />
-      </div>
-
-      <div onContextMenu={handleContextMenu}>
-        <CustomContextMenu handleItemClick={handleItemClick} />
-
+      <SmallScreenSize />
+      <div className="hidden md:block">
         <div
+          onContextMenu={() => e.preventDefault()}
+          onClick={(e) => handleClick(e)}
           className={
-            'flex select-none flex-col ' + (lock ? 'hidden' : 'slideup block')
+            'mx-auto select-none md:w-full' +
+            (lock ? `block` : 'slidedown absolute -z-20')
           }
         >
-          <div className="overflow-clip">
-            <Image
-              src={walls[currentBg]}
-              alt="windows wallpaper"
-              className="absolute -z-10 h-screen w-screen"
-            />
-          </div>
-          {openStartMenu && (
-            <StartMenu
+          <LockScreen />
+        </div>
+
+        <div onContextMenu={handleContextMenu}>
+          <CustomContextMenu handleItemClick={handleItemClick} />
+
+          <div
+            className={
+              'flex select-none flex-col ' + (lock ? 'hidden' : 'slideup block')
+            }
+          >
+            <div className="overflow-clip">
+              <Image
+                src={walls[currentBg]}
+                alt="windows wallpaper"
+                className="absolute -z-10 h-screen w-screen"
+              />
+            </div>
+            {openStartMenu && (
+              <StartMenu
+                openStartMenu={openStartMenu}
+                setOpenStartMenu={setOpenStartMenu}
+              />
+            )}
+
+            {open.map((app) => (
+              <div key={app.name}>
+                {app.open && !app.minimized && (
+                  <Fade duration={500}>
+                    <Fragment>{openedApps}</Fragment>
+                  </Fade>
+                )}
+              </div>
+            ))}
+            <Icons />
+            <Taskbar
               openStartMenu={openStartMenu}
               setOpenStartMenu={setOpenStartMenu}
             />
-          )}
-
-          {open.map((app) => (
-            <div key={app.name}>
-              {app.open && !app.minimized && (
-                <Fade duration={500}>
-                  <Fragment>{openedApps}</Fragment>
-                </Fade>
-              )}
-            </div>
-          ))}
-          <Icons />
-          <Taskbar
-            openStartMenu={openStartMenu}
-            setOpenStartMenu={setOpenStartMenu}
-          />
+          </div>
         </div>
       </div>
     </Fragment>
