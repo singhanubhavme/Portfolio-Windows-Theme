@@ -32,13 +32,13 @@ const Icons = () => {
           <div onDoubleClick={() => updateOpenStatus('Anubhav')}>
             <Icon icon={MyDocumentsIcon} title={'Anubhav'} />
           </div>
-          <div onDoubleClick={() => updateOpenStatus('This PC')}>
+          <div /* onDoubleClick={() => updateOpenStatus('This PC')} */>
             <Icon icon={ThisPCIcon} title={'This PC'} />
           </div>
-          <div onDoubleClick={() => updateOpenStatus('Recycle Bin')}>
+          <div /* onDoubleClick={() => updateOpenStatus('Recycle Bin')} */>
             <Icon icon={RecycleBinIcon} title={'Recycle Bin'} />
           </div>
-          <div onDoubleClick={() => updateOpenStatus('Control Panel')}>
+          <div /* onDoubleClick={() => updateOpenStatus('Control Panel')} */>
             <Icon icon={ControlPanelIcon} title={'Control Panel'} />
           </div>
           <div onDoubleClick={() => updateOpenStatus('Code')}>
@@ -52,7 +52,7 @@ const Icons = () => {
           </div>
         </div>
         <div className="desktop-icons text-white">
-          <div onDoubleClick={() => updateOpenStatus('Terminal')}>
+          <div /* onDoubleClick={() => updateOpenStatus('Terminal')} */>
             <Icon icon={TerminalIcon} title={'Terminal'} />
           </div>
           <div onDoubleClick={() => updateOpenStatus('Chrome')}>
