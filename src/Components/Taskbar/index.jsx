@@ -24,7 +24,7 @@ const Taskbar = ({ openStartMenu, setOpenStartMenu }) => {
 
   return (
     <Fragment>
-      <div className="absolute bottom-0 flex h-10 w-full flex-row bg-[#1e1e1e]">
+      <div className="absolute bottom-0 z-0 flex h-10 w-full flex-row bg-[#1e1e1e]">
         <div className="start flex flex-row">
           <div onClick={() => setOpenStartMenu(!openStartMenu)}>
             <Image

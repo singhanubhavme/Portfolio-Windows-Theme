@@ -82,27 +82,27 @@ const Main = () => {
     .map((app) => {
       switch (app.name) {
         case 'Anubhav':
-          return <Anubhav key={app.name} />;
+          if (!app.minimized) return <Anubhav key={app.name} />;
         case 'This PC':
-          return <ThisPC key={app.name} />;
+          if (!app.minimized) return <ThisPC key={app.name} />;
         case 'Recycle Bin':
-          return <RecycleBin key={app.name} />;
+          if (!app.minimized) return <RecycleBin key={app.name} />;
         case 'Control Panel':
-          return <ControlPanel key={app.name} />;
+          if (!app.minimized) return <ControlPanel key={app.name} />;
         case 'Code':
-          return <Code key={app.name} />;
+          if (!app.minimized) return <Code key={app.name} />;
         case 'Spotify':
-          return <Spotify key={app.name} />;
+          if (!app.minimized) return <Spotify key={app.name} />;
         case 'Calculator':
-          return <Calculator key={app.name} />;
+          if (!app.minimized) return <Calculator key={app.name} />;
         case 'Terminal':
-          return <Terminal key={app.name} />;
+          if (!app.minimized) return <Terminal key={app.name} />;
         case 'Chrome':
-          return <Chrome key={app.name} />;
+          if (!app.minimized) return <Chrome key={app.name} />;
         case 'Notepad':
-          return <Notepad key={app.name} />;
+          if (!app.minimized) return <Notepad key={app.name} />;
         case 'Lichess TV':
-          return <Lichess key={app.name} />;
+          if (!app.minimized) return <Lichess key={app.name} />;
         default:
           return null;
       }
@@ -185,7 +185,6 @@ const Main = () => {
                 />
               </Fragment>
             )}
-
             {open.map((app, index) => (
               <div key={index}>
                 {app.open && !app.minimized && (
