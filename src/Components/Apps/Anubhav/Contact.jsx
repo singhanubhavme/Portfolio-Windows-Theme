@@ -60,7 +60,10 @@ function Contact({ setShowContact }) {
                       </div>
                     </div>
                     <div className="flex w-full items-center justify-center">
-                      <button className="mt-9 rounded bg-blue-700 px-10 py-4 font-semibold leading-none text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2">
+                      <button
+                        onClick={(e) => e.preventDefault()}
+                        className="mt-9 rounded bg-blue-700 px-10 py-4 font-semibold leading-none text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"
+                      >
                         Send message
                       </button>
                     </div>

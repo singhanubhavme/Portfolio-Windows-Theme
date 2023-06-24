@@ -11,7 +11,7 @@ const Calender = () => {
     const id = setInterval(() => {
       setT1(moment().format('hh:mm A'));
       setT2(moment().format('DD-MM-YYYY'));
-    }, 1000);
+    }, 900);
 
     return () => {
       clearInterval(id);

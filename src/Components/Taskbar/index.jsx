@@ -35,7 +35,7 @@ const Taskbar = ({ openStartMenu, setOpenStartMenu }) => {
             />
           </div>
           <Search />
-          <PinnedIcons />
+          {/* <PinnedIcons /> */}
           <Fragment>
             {open.map((app, index) => {
               if (app.minimized || app.open) {

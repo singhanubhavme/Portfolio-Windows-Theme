@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fireworks-js/react": "^2.10.5",
     "@headlessui/react": "^1.7.13",
     "@mojs/core": "^1.4.0",
     "eslint": "8.36.0",

@@ -23,11 +23,6 @@ import Contact from './Contact';
 import Social from './Social';
 import Projects from './Projects';
 
-// import InstaIcon from '../../../assets/socials/instagram.svg';
-// import TwitterIcon from '../../../assets/socials/twitter.svg';
-// import LinkedinIcon from '../../../assets/socials/linkedin.svg';
-// import GithubIcon from '../../../assets/socials/github.svg';
-
 const Anubhav = () => {
   const { handleMinimize, handleClose } = useOpenAppContext();
 
@@ -131,12 +126,6 @@ const Anubhav = () => {
               content={'Keep Up with me'}
             />
           </div>
-          {/* <div className="flex flex-row justify-center bg-[#333333]">
-            <Image className="w-8 mx-2 m-1" src={InstaIcon} alt="socials" />
-            <Image className="w-8 mx-2 m-1" src={LinkedinIcon} alt="socials" />
-            <Image className="w-8 mx-2 m-1" src={TwitterIcon} alt="socials" />
-            <Image className="w-8 mx-2 m-1" src={GithubIcon} alt="socials" />
-          </div> */}
         </div>
       </div>
     </Fragment>

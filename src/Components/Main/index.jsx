@@ -20,6 +20,8 @@ import Lichess from '../Apps/Lichess';
 import CustomContextMenu from './CustomContextMenu';
 import { useContextMenu } from 'react-contexify';
 import 'react-contexify/ReactContexify.css';
+// import { Fireworks } from 'fireworks-js/dist/react';
+import { Fireworks } from '@fireworks-js/react';
 
 import Wallpaper1 from '../../assets/walls/w1.jpg';
 import Wallpaper2 from '../../assets/walls/w2.jpg';
@@ -49,6 +51,15 @@ const Main = () => {
   const [lock, setLock] = useState(false);
   const [openStartMenu, setOpenStartMenu] = useState(false);
 
+  const fireworkStyle = {
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    position: 'fixed',
+    background: 'rgba(0,0,0,.9)',
+  };
+
   const handleClick = (e) => {
     e.preventDefault();
     setLock(false);
@@ -71,27 +82,27 @@ const Main = () => {
     .map((app) => {
       switch (app.name) {
         case 'Anubhav':
-          return <Anubhav />;
+          return <Anubhav key={app.name} />;
         case 'This PC':
-          return <ThisPC />;
+          return <ThisPC key={app.name} />;
         case 'Recycle Bin':
-          return <RecycleBin />;
+          return <RecycleBin key={app.name} />;
         case 'Control Panel':
-          return <ControlPanel />;
+          return <ControlPanel key={app.name} />;
         case 'Code':
-          return <Code />;
+          return <Code key={app.name} />;
         case 'Spotify':
-          return <Spotify />;
+          return <Spotify key={app.name} />;
         case 'Calculator':
-          return <Calculator />;
+          return <Calculator key={app.name} />;
         case 'Terminal':
-          return <Terminal />;
+          return <Terminal key={app.name} />;
         case 'Chrome':
-          return <Chrome />;
+          return <Chrome key={app.name} />;
         case 'Notepad':
-          return <Notepad />;
+          return <Notepad key={app.name} />;
         case 'Lichess TV':
-          return <Lichess />;
+          return <Lichess key={app.name} />;
         default:
           return null;
       }
@@ -159,14 +170,24 @@ const Main = () => {
               />
             </div>
             {openStartMenu && (
-              <StartMenu
-                openStartMenu={openStartMenu}
-                setOpenStartMenu={setOpenStartMenu}
-              />
+              <Fragment>
+                <StartMenu
+                  openStartMenu={openStartMenu}
+                  setOpenStartMenu={setOpenStartMenu}
+                />
+                <Fireworks
+                  options={{
+                    speed: 3,
+                    mouse: { click: true, move: false, max: 3 },
+                    intensity: 50,
+                  }}
+                  style={fireworkStyle}
+                />
+              </Fragment>
             )}
 
-            {open.map((app) => (
-              <div key={app.name}>
+            {open.map((app, index) => (
+              <div key={index}>
                 {app.open && !app.minimized && (
                   <Fade duration={500}>
                     <Fragment>{openedApps}</Fragment>
