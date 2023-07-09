@@ -5,9 +5,11 @@ import TerminalIcon from '../../../assets/icons/terminal.svg';
 import useOpenAppContext from '@/hooks/use-open-app-hook';
 import Draggable from 'react-draggable';
 import { ReactTerminal } from 'react-terminal';
+import { useRef } from 'react';
 
 const Terminal = () => {
   const { handleMinimize, handleClose } = useOpenAppContext();
+  const nodeRef = useRef(null);
 
   const theme = {
     themeBGColor: '#333333',
@@ -43,10 +45,13 @@ const Terminal = () => {
   );
 
   return (
-    <Draggable handle=".handleDrag" bounds="body">
+    <Draggable nodeRef={nodeRef} handle=".handleDrag" bounds="body">
       <div className="absolute left-[20%] z-50 flex items-center justify-center px-5 py-5">
         <div className="relative mx-auto overflow-hidden rounded-xl bg-gray-100 text-gray-800 shadow-xl">
-          <div className="handleDrag h-[33px] w-full bg-[#2D2D2D]">
+          <div
+            ref={nodeRef}
+            className="handleDrag h-[33px] w-full bg-[#2D2D2D]"
+          >
             <div className="flex flex-row items-center justify-between">
               <div className="ml-4 flex flex-row justify-between text-sm text-gray-400">
                 <Image src={TerminalIcon} alt="icon" className="mr-4" />
