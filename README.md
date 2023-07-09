@@ -1,38 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Windows 10 Portfolio Website
+
+This is a portfolio website designed in the style of Windows 10, built using Next.js and Tailwind CSS.
+
+## Features
+
+- Windows 10-inspired design and layout
+- Responsive and mobile-friendly
+- Smooth transitions and animations
+- Interactive elements and hover effects
+- Easy customization with Tailwind CSS
+
+## Technologies Used
+
+- Next.js: A React framework for building server-rendered applications.
+- Tailwind CSS: A utility-first CSS framework for rapid UI development.
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy of the project up and running, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. Clone the repository:
+   `git clone https://github.com/Portfolio-Windows-Theme.git`
+2. Navigate into the project directory:
+   `cd Portfolio-Windows-Theme`
+3. Install the dependencies:
+   `yarn`
+4. Start the development server:
+   `yarn dev`
+5. Open your browser and visit http://localhost:3000 to see the website.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Customization
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+You can easily customize the website by modifying the relevant files:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- `pages/index.js`: Update the content, sections, and layout of the homepage.
+- `components`: Customize individual components or create new ones as needed.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To deploy the website to a production environment, you can follow the deployment guides provided by Next.js. Here are some common options:
 
-## Learn More
+- Vercel: The easiest way to deploy Next.js applications.
+- Netlify: A popular hosting platform for static websites.
+- GitHub Pages: Free hosting for personal, organization, or project pages directly from a GitHub repository.
 
-To learn more about Next.js, take a look at the following resources:
+Refer to the official documentation of your chosen deployment platform for detailed instructions on how to deploy a Next.js application.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Credits
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This website was created by Anubhav Singh. Feel free to contribute, report issues, or provide feedback by submitting a pull request or creating an issue in the repository.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License.
