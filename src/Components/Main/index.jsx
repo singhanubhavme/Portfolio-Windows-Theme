@@ -1,3 +1,4 @@
+/* eslint-disable no-fallthrough */
 import { Fragment, useState, useEffect } from 'react';
 import useOpenAppContext from '@/hooks/use-open-app-hook';
 import Image from 'next/image';
@@ -45,7 +46,7 @@ const walls = [
 ];
 
 const Main = () => {
-  const { open, setOpen } = useOpenAppContext();
+  const { open } = useOpenAppContext();
   const [currentBg, setCurrentBg] = useState(0);
 
   const [lock, setLock] = useState(false);
@@ -144,7 +145,7 @@ const Main = () => {
       <SmallScreenSize />
       <div className="hidden md:block">
         <div
-          onContextMenu={() => e.preventDefault()}
+          onContextMenu={(e) => e.preventDefault()}
           onClick={(e) => handleClick(e)}
           className={
             'mx-auto select-none md:w-full' +

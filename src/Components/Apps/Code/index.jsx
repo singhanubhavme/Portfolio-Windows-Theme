@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from 'react';
+import { Fragment } from 'react';
 import Image from 'next/image';
 import CrossIcon from '../../../assets/icons/cross.svg';
 import MinimizeIcon from '../../../assets/icons/minimize.svg';

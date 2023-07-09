@@ -1,8 +1,7 @@
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import TaskbarIcon from '../../assets/icons/taskbar-icon.svg';
 import Image from 'next/image';
 import Search from './Search';
-import PinnedIcons from './PinnedIcons';
 import NotificationIcon from '../../assets/icons/notification-icon.svg';
 import Calender from './Calender';
 import TaskIcons from './TaskIcons';

@@ -2,7 +2,7 @@ import Fade from 'react-reveal/Fade';
 import AnubhavImg from '../../assets/avatar.jpg';
 import Image from 'next/image';
 
-const StartMenu = ({ openStartMenu, setOpenStartMenu }) => {
+const StartMenu = () => {
   return (
     <Fade
       bottom

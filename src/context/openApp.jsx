@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
 const OpenAppContext = createContext();
 import ThisPCIcon from '../assets/icons/this-pc.ico';
 import CalcIcon from '../assets/icons/calc.png';

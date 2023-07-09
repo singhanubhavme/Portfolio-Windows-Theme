@@ -14,7 +14,7 @@ import Icon from './Icon';
 import useOpenAppContext from '@/hooks/use-open-app-hook';
 
 const Icons = () => {
-  const { open, setOpen } = useOpenAppContext();
+  const { setOpen } = useOpenAppContext();
   const updateOpenStatus = (title) => {
     setOpen((open) => {
       return open.map((app) => {

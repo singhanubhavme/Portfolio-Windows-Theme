@@ -1,4 +1,3 @@
-import React, { useEffect, useRef } from 'react';
 import Zoom from 'react-reveal/Zoom';
 import { AiOutlineClose } from 'react-icons/ai';
 import SocialSvg from '../../../assets/SocialSvg';
