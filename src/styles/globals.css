@@ -127,3 +127,7 @@ body {
     --contexify-arrow-color: #6f6e77 !important;
     --contexify-activeArrow-color: #fff !important;
 }
+
+.terminal div div div span {
+    font-size: 15px;
+}
