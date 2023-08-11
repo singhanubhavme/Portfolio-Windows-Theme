@@ -12,8 +12,11 @@ import NotepadIcon from '../../assets/icons/notepad.ico';
 import LichessIcon from '../../assets/icons/lichess-icon.svg';
 import Icon from './Icon';
 import useOpenAppContext from '@/hooks/use-open-app-hook';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Icons = () => {
+  const notify = () => toast.error('Not implemented yet!');
   const { setOpen } = useOpenAppContext();
   const updateOpenStatus = (title) => {
     setOpen((open) => {
@@ -27,18 +30,30 @@ const Icons = () => {
   };
   return (
     <Fragment>
+      <ToastContainer />
       <div className="icon-col flex flex-row">
         <div className="desktop-icons text-white">
           <div onDoubleClick={() => updateOpenStatus('Anubhav')}>
             <Icon icon={MyDocumentsIcon} title={'Anubhav'} />
           </div>
-          <div /* onDoubleClick={() => updateOpenStatus('This PC')} */>
+          <div
+            onDoubleClick={notify}
+            /* onDoubleClick={() => updateOpenStatus('This PC')} */
+          >
             <Icon icon={ThisPCIcon} title={'This PC'} />
           </div>
-          <div /* onDoubleClick={() => updateOpenStatus('Recycle Bin')} */>
+          <div
+            onDoubleClick={
+              notify
+            } /* onDoubleClick={() => updateOpenStatus('Recycle Bin')} */
+          >
             <Icon icon={RecycleBinIcon} title={'Recycle Bin'} />
           </div>
-          <div /* onDoubleClick={() => updateOpenStatus('Control Panel')} */>
+          <div
+            onDoubleClick={
+              notify
+            } /* onDoubleClick={() => updateOpenStatus('Control Panel')} */
+          >
             <Icon icon={ControlPanelIcon} title={'Control Panel'} />
           </div>
           <div onDoubleClick={() => updateOpenStatus('Code')}>
