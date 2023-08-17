@@ -23,7 +23,7 @@ const LockScreen = () => {
 
   return (
     <Fragment>
-      <div className="overflow-clip">
+      <div className="slideup overflow-clip">
         <Image
           src={LockScreenWallpaper}
           alt="lock screen wallpaper"

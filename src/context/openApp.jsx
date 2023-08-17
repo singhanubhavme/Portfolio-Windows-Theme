@@ -8,7 +8,6 @@ import SpotifyIcon from '../assets/icons/spotify.svg';
 import TerminalIcon from '../assets/icons/terminal.svg';
 import ChromeIcon from '../assets/icons/chrome-icon.svg';
 import RecycleBinIcon from '../assets/icons/recycle-bin.ico';
-import ControlPanelIcon from '../assets/icons/control-panel.ico';
 import NotepadIcon from '../assets/icons/notepad.ico';
 import LichessIcon from '../assets/icons/lichess-icon.svg';
 
@@ -30,12 +29,6 @@ const apps = [
     open: false,
     minimized: false,
     img: RecycleBinIcon,
-  },
-  {
-    name: 'Control Panel',
-    open: false,
-    minimized: false,
-    img: ControlPanelIcon,
   },
   {
     name: 'Code',

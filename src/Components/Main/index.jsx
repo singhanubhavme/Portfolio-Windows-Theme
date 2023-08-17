@@ -11,7 +11,6 @@ import Fade from 'react-reveal/Fade';
 import Anubhav from '../Apps/Anubhav';
 import ThisPC from '../Apps/ThisPC';
 import RecycleBin from '../Apps/RecycleBin';
-import ControlPanel from '../Apps/ControlPanel';
 import Spotify from '../Apps/Spotify';
 import Calculator from '../Apps/Calculator';
 import Terminal from '../Apps/Terminal';
@@ -21,7 +20,6 @@ import Lichess from '../Apps/Lichess';
 import CustomContextMenu from './CustomContextMenu';
 import { useContextMenu } from 'react-contexify';
 import 'react-contexify/ReactContexify.css';
-// import { Fireworks } from 'fireworks-js/dist/react';
 import { Fireworks } from '@fireworks-js/react';
 
 import Wallpaper1 from '../../assets/walls/w1.jpg';
@@ -49,7 +47,7 @@ const Main = () => {
   const { open } = useOpenAppContext();
   const [currentBg, setCurrentBg] = useState(0);
 
-  const [lock, setLock] = useState(false);
+  const [lock, setLock] = useState(true);
   const [openStartMenu, setOpenStartMenu] = useState(false);
 
   const fireworkStyle = {
@@ -88,8 +86,6 @@ const Main = () => {
           if (!app.minimized) return <ThisPC key={app.name} />;
         case 'Recycle Bin':
           if (!app.minimized) return <RecycleBin key={app.name} />;
-        case 'Control Panel':
-          if (!app.minimized) return <ControlPanel key={app.name} />;
         case 'Code':
           if (!app.minimized) return <Code key={app.name} />;
         case 'Spotify':
