@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import CrossIcon from '../../../assets/icons/cross.svg';
 import MinimizeIcon from '../../../assets/icons/minimize.svg';
 import CalcIcon from '../../../assets/icons/calc.png';
@@ -7,8 +7,6 @@ import useOpenAppContext from '@/hooks/use-open-app-hook';
 import Draggable from 'react-draggable';
 
 const Calculator = () => {
-  const nodeRef = useRef(null);
-
   const { handleMinimize, handleClose } = useOpenAppContext();
   const [result, setResult] = useState('');
 
@@ -26,13 +24,10 @@ const Calculator = () => {
     }
   };
   return (
-    <Draggable nodeRef={nodeRef} handle=".handleDrag" bounds="body">
+    <Draggable handle=".handleDrag" bounds="body">
       <div className="absolute left-[20%] z-50 flex items-center justify-center px-5 py-5">
         <div className="relative mx-auto overflow-hidden rounded-xl bg-gray-100 text-gray-800 shadow-xl">
-          <div
-            ref={nodeRef}
-            className="handleDrag h-[33px] w-full bg-[#2D2D2D]"
-          >
+          <div className="handleDrag h-[33px] w-full bg-[#2D2D2D]">
             <div className="flex flex-row items-center justify-between">
               <div className="mx-auto flex flex-row justify-between text-sm text-gray-400">
                 <Image src={CalcIcon} alt="icon" className="mr-12 w-4" />
