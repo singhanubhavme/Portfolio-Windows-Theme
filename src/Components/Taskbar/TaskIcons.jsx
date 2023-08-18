@@ -15,7 +15,7 @@ const TaskIcons = () => {
             <div>
               <Menu.Button>
                 <Image
-                  placeholder="blur"
+                  priority={true}
                   src={ArrowIcon}
                   className="m-1.5 w-4"
                   alt="arrow icon"
@@ -54,20 +54,20 @@ const TaskIcons = () => {
         </Fragment>
 
         <Image
-          placeholder="blur"
+          priority={true}
           src={WifiIcon}
           className="m-1.5 w-5"
           alt="wifi icon"
         />
         <Image
-          placeholder="blur"
+          priority={true}
           src={BatteryIcon}
           className="m-1.5 w-5"
           style={{ filter: 'invert(100%)' }}
           alt="battery icon"
         />
         <Image
-          placeholder="blur"
+          priority={true}
           src={SoundIcon}
           className="m-1.5 h-5 w-5"
           alt="sound icon"

@@ -7,7 +7,7 @@ const Search = () => {
     <Fragment>
       <div className="search-box ml-3 flex flex-row bg-white pl-2 pr-16">
         <Image
-          placeholder="blur"
+          priority={true}
           src={SearchIcon}
           className="ml-1 mr-1 w-5"
           alt="search icon"

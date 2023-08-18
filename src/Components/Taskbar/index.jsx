@@ -27,7 +27,7 @@ const Taskbar = ({ openStartMenu, setOpenStartMenu }) => {
         <div className="start flex flex-row">
           <div onClick={() => setOpenStartMenu(!openStartMenu)}>
             <Image
-              placeholder="blur"
+              priority={true}
               src={TaskbarIcon}
               className="m-3 w-5"
               alt="taskbar icon"
@@ -42,7 +42,7 @@ const Taskbar = ({ openStartMenu, setOpenStartMenu }) => {
                 return (
                   <Image
                     onClick={() => updateOpenStatus(`${app.name}`)}
-                    placeholder="blur"
+                    priority={true}
                     key={index}
                     src={app.img}
                     className={`mx-0.5 box-content w-7 border-b-4 px-3 py-1.5 ${
@@ -60,7 +60,7 @@ const Taskbar = ({ openStartMenu, setOpenStartMenu }) => {
           <TaskIcons />
           <Calender />
           <Image
-            placeholder="blur"
+            priority={true}
             src={NotificationIcon}
             className="my-auto mr-3 w-5"
             alt="notification icon"

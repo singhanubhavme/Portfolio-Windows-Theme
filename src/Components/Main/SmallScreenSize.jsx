@@ -22,7 +22,6 @@ function SmallScreenSize() {
         <div className="relative mt-12 w-full lg:mt-0 lg:w-1/2">
           <Image
             src={ErrorImg}
-            placeholder="blur"
             className="w-full max-w-lg lg:mx-auto"
             alt="error 404"
           />
