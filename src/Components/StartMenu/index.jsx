@@ -13,6 +13,8 @@ const StartMenu = () => {
       <div className="absolute bottom-10 z-20 h-[85vh] w-[22vw] bg-gray-900 text-white">
         <div className="overflow-hidden rounded-t-lg bg-[#CF9EF5]">
           <Image
+            priority={true}
+            placeholder="blur"
             className="mx-auto my-2 w-[70%] object-contain object-center"
             src={AnubhavImg}
             alt="avatar"

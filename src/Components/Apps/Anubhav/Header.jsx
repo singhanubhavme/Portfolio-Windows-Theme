@@ -7,6 +7,7 @@ const Header = () => {
       <div className="pt-3">
         <Image
           src={AnubhavImg}
+          placeholder="blur"
           alt="anubhav singh"
           className="mx-auto w-[10%] rounded-full"
         />

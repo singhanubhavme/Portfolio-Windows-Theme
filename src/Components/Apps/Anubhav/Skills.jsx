@@ -116,6 +116,7 @@ function Skills({ setShowSkills }) {
                     key={index}
                   >
                     <Image
+                      placeholder="blur"
                       src={item.img}
                       className="mx-12 my-5 h-[55px] w-[60px]"
                       alt={item.title}

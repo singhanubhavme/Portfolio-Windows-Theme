@@ -64,14 +64,21 @@ const Anubhav = () => {
               {showProjects && <Projects setShowProjects={setShowProjects} />}
               <div className="flex flex-row">
                 <Image
+                  priority={true}
                   onClick={() => handleMinimize('Anubhav')}
                   src={MinimizeIcon}
                   alt="icon"
                   className="m-1 mx-3 w-6"
                 />
-                <Image src={RestoreIcon} alt="icon" className="m-1 mx-3 w-3" />
+                <Image
+                  priority={true}
+                  src={RestoreIcon}
+                  alt="icon"
+                  className="m-1 mx-3 w-3"
+                />
                 <Image
                   onClick={() => handleClose('Anubhav')}
+                  priority={true}
                   src={CrossIcon}
                   alt="icon"
                   className="m-1 mx-3 w-6 hover:bg-red-700"

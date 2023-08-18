@@ -24,8 +24,9 @@ const Education = ({ setShowEducation }) => {
 
             <div className="my-4 flex flex-row justify-evenly">
               <Image
-                className="h-20 w-20 rounded-lg"
                 src={Education2Img}
+                placeholder="blur"
+                className="h-20 w-20 rounded-lg"
                 alt="college"
               />
               <div className="w-1/2">
@@ -45,8 +46,9 @@ const Education = ({ setShowEducation }) => {
 
             <div className="my-4 flex flex-row justify-evenly">
               <Image
-                className="h-20 w-20 rounded-full"
                 src={Education1Img}
+                placeholder="blur"
+                className="h-20 w-20 rounded-full"
                 alt="school"
               />
               <div className="w-1/2">
@@ -64,8 +66,9 @@ const Education = ({ setShowEducation }) => {
 
             <div className="my-4 flex flex-row justify-evenly">
               <Image
-                className="h-20 w-20 rounded-full"
                 src={Education1Img}
+                placeholder="blur"
+                className="h-20 w-20 rounded-full"
                 alt="school"
               />
               <div className="w-1/2">

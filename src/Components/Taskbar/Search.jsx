@@ -6,7 +6,12 @@ const Search = () => {
   return (
     <Fragment>
       <div className="search-box ml-3 flex flex-row bg-white pl-2 pr-16">
-        <Image src={SearchIcon} className="ml-1 mr-1 w-5" alt="search icon" />
+        <Image
+          placeholder="blur"
+          src={SearchIcon}
+          className="ml-1 mr-1 w-5"
+          alt="search icon"
+        />
         <input
           type="text"
           className="pl-2 placeholder:text-slate-700 focus:outline-0"

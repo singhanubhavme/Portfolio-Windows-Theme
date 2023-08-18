@@ -162,6 +162,8 @@ const Main = () => {
             <div className="overflow-clip">
               <Image
                 src={walls[currentBg]}
+                priority={true}
+                placeholder="blur"
                 alt="windows wallpaper"
                 className="absolute -z-10 h-screen w-screen"
               />

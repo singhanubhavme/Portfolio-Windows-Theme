@@ -26,6 +26,7 @@ const LockScreen = () => {
       <div className="slideup overflow-clip">
         <Image
           src={LockScreenWallpaper}
+          priority={true}
           alt="lock screen wallpaper"
           className="absolute -z-10 h-screen w-screen"
         />
@@ -36,11 +37,13 @@ const LockScreen = () => {
 
         <Image
           src={WifiIcon}
+          priority={true}
           className="absolute bottom-0 right-0 mb-8 mr-20 w-8"
           alt="wifi icon"
         />
         <Image
           src={BatteryIcon}
+          priority={true}
           className="absolute bottom-0 right-0 mb-10 mr-6 w-8"
           style={{ filter: 'invert(100%)' }}
           alt="battery icon"

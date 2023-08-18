@@ -49,18 +49,25 @@ const Terminal = () => {
           <div className="handleDrag h-[33px] w-full bg-[#2D2D2D]">
             <div className="flex flex-row items-center justify-between">
               <div className="ml-4 flex flex-row justify-between text-sm text-gray-400">
-                <Image src={TerminalIcon} alt="icon" className="mr-4" />
+                <Image
+                  placeholder="blur"
+                  src={TerminalIcon}
+                  alt="icon"
+                  className="mr-4"
+                />
                 <span className="">Terminal</span>
               </div>
               <div className="flex flex-row">
                 <Image
                   onClick={() => handleMinimize('Terminal')}
+                  placeholder="blur"
                   src={MinimizeIcon}
                   alt="icon"
                   className="m-1 mx-3 w-6"
                 />
                 <Image
                   onClick={() => handleClose('Terminal')}
+                  placeholder="blur"
                   src={CrossIcon}
                   alt="icon"
                   className="m-1 mx-3 w-6 hover:bg-red-700"

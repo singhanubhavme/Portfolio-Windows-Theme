@@ -18,13 +18,20 @@ const Chrome = () => {
             <div className="flex flex-row">
               <Image
                 onClick={() => handleMinimize('Chrome')}
+                placeholder="blur"
                 src={MinimizeIcon}
                 alt="icon"
                 className="m-1 mx-3 w-6"
               />
-              <Image src={RestoreIcon} alt="icon" className="m-1 mx-3 w-3" />
+              <Image
+                placeholder="blur"
+                src={RestoreIcon}
+                alt="icon"
+                className="m-1 mx-3 w-3"
+              />
               <Image
                 onClick={() => handleClose('Chrome')}
+                placeholder="blur"
                 src={CrossIcon}
                 alt="icon"
                 className="m-1 mx-3 w-6 hover:bg-red-700"

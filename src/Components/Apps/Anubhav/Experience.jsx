@@ -25,8 +25,9 @@ function Experience({ setShowExperience }) {
 
             <div className="my-4 flex flex-row justify-evenly">
               <Image
-                className="h-20 w-20 rounded-lg"
                 src={Intern1Img}
+                placeholder="blur"
+                className="h-20 w-20 rounded-lg"
                 alt="intern"
               />
               <div className="w-1/2">
@@ -47,8 +48,9 @@ function Experience({ setShowExperience }) {
 
             <div className="my-4 flex flex-row justify-evenly">
               <Image
-                className="h-20 w-20 rounded-full"
                 src={Intern2Img}
+                placeholder="blur"
+                className="h-20 w-20 rounded-full"
                 alt="intern"
               />
               <div className="w-1/2">
@@ -69,8 +71,9 @@ function Experience({ setShowExperience }) {
 
             <div className="my-4 flex flex-row justify-evenly">
               <Image
-                className="-ml-[40px] w-[120px] translate-x-[20px] transform rounded-lg"
                 src={Intern3Img}
+                placeholder="blur"
+                className="-ml-[40px] w-[120px] translate-x-[20px] transform rounded-lg"
                 alt="intern"
               />
               <div className="w-1/2">
