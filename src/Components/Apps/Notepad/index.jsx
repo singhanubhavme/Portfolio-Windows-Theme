@@ -19,19 +19,12 @@ const Notepad = () => {
             <div className="flex flex-row">
               <Image
                 onClick={() => handleMinimize('Notepad')}
-                placeholder="blur"
                 src={MinimizeIcon}
                 alt="icon"
                 className="m-1 mx-3 w-6"
               />
+              <Image src={RestoreIcon} alt="icon" className="m-1 mx-3 w-3" />
               <Image
-                placeholder="blur"
-                src={RestoreIcon}
-                alt="icon"
-                className="m-1 mx-3 w-3"
-              />
-              <Image
-                placeholder="blur"
                 onClick={() => handleClose('Notepad')}
                 src={CrossIcon}
                 alt="icon"

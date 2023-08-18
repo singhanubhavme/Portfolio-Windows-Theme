@@ -5,7 +5,6 @@ function Card({ project, index, colors }) {
     <div className="mx-auto min-h-[400px] w-[300px] overflow-hidden rounded-lg bg-white">
       <Image
         className="h-[180px] w-full"
-        placeholder="blur"
         src={project.img}
         alt={project.title}
       />

@@ -30,12 +30,7 @@ const Calculator = () => {
           <div className="handleDrag h-[33px] w-full bg-[#2D2D2D]">
             <div className="flex flex-row items-center justify-between">
               <div className="mx-auto flex flex-row justify-between text-sm text-gray-400">
-                <Image
-                  placeholder="blur"
-                  src={CalcIcon}
-                  alt="icon"
-                  className="mr-12 w-4"
-                />
+                <Image src={CalcIcon} alt="icon" className="mr-12 w-4" />
                 <span className="absolute left-1/2 -translate-x-1/2 transform justify-center">
                   Calculator
                 </span>
@@ -43,14 +38,12 @@ const Calculator = () => {
               <div className="flex flex-row">
                 <Image
                   onClick={() => handleMinimize('Calculator')}
-                  placeholder="blur"
                   src={MinimizeIcon}
                   alt="icon"
                   className="m-1 mx-3 w-6"
                 />
                 <Image
                   onClick={() => handleClose('Calculator')}
-                  placeholder="blur"
                   src={CrossIcon}
                   alt="icon"
                   className="m-1 mx-3 w-6 hover:bg-red-700"
