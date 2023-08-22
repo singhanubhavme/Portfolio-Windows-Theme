@@ -1,5 +1,4 @@
 import Zoom from 'react-reveal/Zoom';
-import ResumePDF from '../../../assets/resume.pdf';
 import { AiOutlineClose } from 'react-icons/ai';
 
 function Resume({ setShowResume }) {
@@ -14,7 +13,7 @@ function Resume({ setShowResume }) {
             />
             <embed
               className="h-full w-[100vw]"
-              src={ResumePDF}
+              src="/resume.pdf"
               type="application/pdf"
             />
           </div>
