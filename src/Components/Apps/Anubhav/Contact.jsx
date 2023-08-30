@@ -16,7 +16,11 @@ function Contact({ setShowContact }) {
                   <p className="text-center text-3xl font-bold leading-7 text-white">
                     Contact me
                   </p>
-                  <form action="" method="post">
+                  <form
+                    action="https://docs.google.com/forms/d/e/1FAIpQLSfowaRdHWcjUGPnXpjq34ayNUxeRLpaokP57rBLLuNoZoZTbQ/formResponse"
+                    target="_self"
+                    method="post"
+                  >
                     <div className="mt-12 items-center md:flex">
                       <div className="flex w-full flex-col md:w-1/2">
                         <label className="font-semibold leading-none text-gray-300">
@@ -24,6 +28,7 @@ function Contact({ setShowContact }) {
                         </label>
                         <input
                           type="text"
+                          name="entry.2005620554"
                           className="mt-4 rounded border-0 bg-gray-800 p-3 leading-none text-gray-50 focus:border-blue-700 focus:outline-none"
                         />
                       </div>
@@ -32,7 +37,8 @@ function Contact({ setShowContact }) {
                           Phone
                         </label>
                         <input
-                          type="email"
+                          type="text"
+                          name="entry.1166974658"
                           className="mt-4 rounded border-0 bg-gray-800 p-3 leading-none text-gray-50 focus:border-blue-700 focus:outline-none"
                         />
                       </div>
@@ -40,10 +46,11 @@ function Contact({ setShowContact }) {
                     <div className="mt-8 items-center md:flex">
                       <div className="flex w-full flex-col">
                         <label className="font-semibold leading-none text-gray-300">
-                          Subject
+                          Email
                         </label>
                         <input
-                          type="text"
+                          type="email"
+                          name="entry.1045781291"
                           className="mt-4 rounded border-0 bg-gray-800 p-3 leading-none text-gray-50 focus:border-blue-700 focus:outline-none"
                         />
                       </div>
@@ -55,15 +62,13 @@ function Contact({ setShowContact }) {
                         </label>
                         <textarea
                           type="text"
+                          name="entry.839337160"
                           className="mt-4 h-40 resize-none rounded border-0 bg-gray-800 p-3 text-base leading-none text-gray-50 focus:border-blue-700 focus:outline-none"
                         ></textarea>
                       </div>
                     </div>
                     <div className="flex w-full items-center justify-center">
-                      <button
-                        onClick={(e) => e.preventDefault()}
-                        className="mt-9 rounded bg-blue-700 px-10 py-4 font-semibold leading-none text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"
-                      >
+                      <button className="mt-9 rounded bg-blue-700 px-10 py-4 font-semibold leading-none text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2">
                         Send message
                       </button>
                     </div>
