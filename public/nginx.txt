@@ -1,0 +1,165 @@
+sudo apt update
+sudo apt upgrade -y
+
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt install -y nodejs
+node -v
+
+sudo apt install build-essential -y
+
+cd ~/.ssh
+ssh-keygen -o -t rsa -C "sanubhav5820@gmail.com"
+cat id_rsa.pub
+
+
+git clone  (enter PAT)
+cd 
+npm install
+npm run build
+
+sudo npm install pm2@latest -g
+pm2 start yarn --name "frontend" -- start
+
+
+// mongodb
+sudo apt-get install gnupg curl
+
+curl -fsSL https://pgp.mongodb.com/server-7.0.asc | \
+   sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \
+   --dearmor
+
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+
+sudo apt-get update
+
+sudo apt-get install -y mongodb-org
+
+echo "mongodb-org hold" | sudo dpkg --set-selections &&
+echo "mongodb-org-database hold" | sudo dpkg --set-selections &&
+echo "mongodb-org-server hold" | sudo dpkg --set-selections &&
+echo "mongodb-mongosh hold" | sudo dpkg --set-selections &&
+echo "mongodb-org-mongos hold" | sudo dpkg --set-selections &&
+echo "mongodb-org-tools hold" | sudo dpkg --set-selections
+
+sudo systemctl start mongod
+sudo systemctl daemon-reload
+sudo systemctl status mongod
+sudo systemctl enable mongod
+sudo systemctl restart mongod
+
+sudo apt install nginx
+
+sudo rm /etc/nginx/sites-available/default && sudo rm /etc/nginx/sites-enabled/default
+
+sudo apt install python3-certbot-nginx -y
+sudo certbot --nginx certonly
+
+sudo vim /etc/nginx/sites-available/url.tld
+
+
+
+
+server {
+     listen [::]:80;
+     listen 80;
+
+     server_name url.tld;
+
+     location / {
+         proxy_pass http://localhost:3000;
+         proxy_http_version 1.1;
+         proxy_set_header Upgrade $http_upgrade;
+         proxy_set_header Connection 'upgrade';
+         proxy_set_header Host $host;
+         proxy_cache_bypass $http_upgrade;
+    }
+}
+
+server {
+     listen [::]:80;
+     listen 80;
+
+     server_name api.url.tld;
+
+     location / {
+         proxy_pass http://localhost:3001;
+         proxy_http_version 1.1;
+         proxy_set_header Upgrade $http_upgrade;
+         proxy_set_header Connection 'upgrade';
+         proxy_set_header Host $host;
+         proxy_cache_bypass $http_upgrade;
+    }
+}
+
+
+
+
+
+
+server {
+      listen [::]:80;
+      listen 80;
+
+      server_name url.tld;
+
+      return 301 https://url.tld$request_uri;
+}
+
+server {
+      listen [::]:80;
+      listen 80;
+
+      server_name api.url.tld;
+
+      return 301 https://api.url.tld$request_uri;
+}
+
+
+server {
+    listen 443 ssl;
+    server_name url.tld;
+
+    ssl_certificate /etc/letsencrypt/live/url.tld/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/url.tld/privkey.pem;
+    client_max_body_size 512M;
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+        proxy_read_timeout 3600;
+        proxy_connect_timeout 3600;
+        proxy_send_timeout 3600;
+    }
+}
+
+server {
+    listen 443 ssl;
+    server_name api.url.tld;
+
+    ssl_certificate /etc/letsencrypt/live/url.tld/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/url.tld/privkey.pem;
+    client_max_body_size 512M;
+    location / {
+        proxy_pass http://localhost:3001;
+        proxy_http_version 1.1;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+        proxy_read_timeout 3600;
+        proxy_connect_timeout 3600;
+        proxy_send_timeout 3600;
+    }
+}
+
+sudo ln -s /etc/nginx/sites-available/url.tld /etc/nginx/sites-enabled/url.tld
+
+sudo nginx -t
+sudo service nginx restart
+
+sudo crontab -e
+0 0,12 * * * certbot renew >/dev/null 2>&1
