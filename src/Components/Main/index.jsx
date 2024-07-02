@@ -1,10 +1,11 @@
+'use client';
 /* eslint-disable no-fallthrough */
 import { Fragment, useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import useOpenAppContext from '@/hooks/use-open-app-hook';
 import Image from 'next/image';
 import Taskbar from '../Taskbar';
 import Icons from '../Icon';
-import LockScreen from '../Lock';
 import StartMenu from '../StartMenu';
 import Code from '../Apps/Code';
 import Fade from 'react-reveal/Fade';
@@ -17,19 +18,20 @@ import Terminal from '../Apps/Terminal';
 import Chrome from '../Apps/Chrome';
 import Notepad from '../Apps/Notepad';
 import Lichess from '../Apps/Lichess';
+const LockScreen = dynamic(() => import('../Lock'), { ssr: false });
 import CustomContextMenu from './CustomContextMenu';
 import { useContextMenu } from 'react-contexify';
 import 'react-contexify/ReactContexify.css';
 import { Fireworks } from '@fireworks-js/react';
 
-import Wallpaper1 from '../../assets/walls/w1.jpg';
-import Wallpaper2 from '../../assets/walls/w2.jpg';
-import Wallpaper3 from '../../assets/walls/w3.jpg';
-import Wallpaper4 from '../../assets/walls/w4.jpg';
-import Wallpaper5 from '../../assets/walls/w5.jpg';
-import Wallpaper6 from '../../assets/walls/w6.jpg';
-import Wallpaper7 from '../../assets/walls/w7.jpg';
-import Wallpaper8 from '../../assets/walls/w8.jpg';
+import Wallpaper1 from '@/assets/walls/w1.jpg';
+import Wallpaper2 from '@/assets/walls/w2.jpg';
+import Wallpaper3 from '@/assets/walls/w3.jpg';
+import Wallpaper4 from '@/assets/walls/w4.jpg';
+import Wallpaper5 from '@/assets/walls/w5.jpg';
+import Wallpaper6 from '@/assets/walls/w6.jpg';
+import Wallpaper7 from '@/assets/walls/w7.jpg';
+import Wallpaper8 from '@/assets/walls/w8.jpg';
 import SmallScreenSize from './SmallScreenSize';
 
 const walls = [

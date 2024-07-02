@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { useState } from 'react';
-import CrossIcon from '../../../assets/icons/cross.svg';
-import MinimizeIcon from '../../../assets/icons/minimize.svg';
-import CalcIcon from '../../../assets/icons/calc.png';
+import CrossIcon from '@/assets/icons/cross.svg';
+import MinimizeIcon from '@/assets/icons/minimize.svg';
+import CalcIcon from '@/assets/icons/calc.png';
 import useOpenAppContext from '@/hooks/use-open-app-hook';
 import Draggable from 'react-draggable';
 

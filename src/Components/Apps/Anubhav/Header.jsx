@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import AnubhavImg from '../../../assets/anubhav.jpeg';
+import AnubhavImg from '@/assets/anubhav.jpeg';
 
 const Header = () => {
   return (

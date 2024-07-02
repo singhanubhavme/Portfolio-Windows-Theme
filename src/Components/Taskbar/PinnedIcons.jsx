@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
-import ChromeIcon from '../../assets/icons/chrome-icon.svg';
-import VSCodeIcon from '../../assets/icons/vscode-icon.svg';
-import LichessIcon from '../../assets/icons/lichess-icon.svg';
+import ChromeIcon from '@/assets/icons/chrome-icon.svg';
+import VSCodeIcon from '@/assets/icons/vscode-icon.svg';
+import LichessIcon from '@/assets/icons/lichess-icon.svg';
 import Image from 'next/image';
 
 const PinnedIcons = () => {

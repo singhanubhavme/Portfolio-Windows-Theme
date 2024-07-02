@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import ErrorImg from '../../assets/error404.svg';
+import ErrorImg from '@/assets/error404.svg';
 
 function SmallScreenSize() {
   return (

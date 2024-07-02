@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import SearchIcon from '../../assets/icons/search-icon.svg';
+import SearchIcon from '@/assets/icons/search-icon.svg';
 import Image from 'next/image';
 
 const Search = () => {

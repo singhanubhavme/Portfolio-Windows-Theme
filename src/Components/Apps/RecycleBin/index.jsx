@@ -2,10 +2,10 @@ import { Fragment, useEffect, useState } from 'react';
 import Image from 'next/image';
 import PastProjects from './PastProjects';
 import Icon from './Icon';
-import CrossIcon from '../../../assets/icons/cross.svg';
-import MinimizeIcon from '../../../assets/icons/minimize.svg';
-import RestoreIcon from '../../../assets/icons/restore.svg';
-import ProjectsIcon from '../../../assets/icons/projects.svg';
+import CrossIcon from '@/assets/icons/cross.svg';
+import MinimizeIcon from '@/assets/icons/minimize.svg';
+import RestoreIcon from '@/assets/icons/restore.svg';
+import ProjectsIcon from '@/assets/icons/projects.svg';
 import useOpenAppContext from '@/hooks/use-open-app-hook';
 
 const RecycleBin = () => {
@@ -23,7 +23,7 @@ const RecycleBin = () => {
   return (
     <Fragment>
       {!loading && (
-        <div className="absolute z-50 h-[calc(100%-33px)] w-[100%] bg-[#333333]">
+        <div className="absolute z-50 h-[calc(100vh-33px)] w-[100%] bg-[#333333]">
           <div className="h-[33px] w-full bg-[#2D2D2D]">
             <div className="flex flex-row items-center justify-end">
               <div className="absolute left-1/2 mx-auto -translate-x-1/2 transform justify-center text-sm text-gray-400">

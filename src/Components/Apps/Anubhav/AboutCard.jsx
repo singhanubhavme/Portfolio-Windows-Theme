@@ -1,9 +1,9 @@
 import Lottie from 'react-lottie';
 
-const AboutCard = ({ title, icon, content, ...rootDOMAttributes }) => {
+const AboutCard = ({ title, icon, content, onClick }) => {
   return (
     <div
-      {...rootDOMAttributes}
+      onClick={onClick}
       className="m-4 flex h-[95px] w-[15%] flex-row items-center justify-between rounded-lg bg-[#3f3f3f] hover:cursor-pointer hover:bg-[#3f3f3fbf]"
     >
       <div className="ml-4 mr-2 w-[23%]">

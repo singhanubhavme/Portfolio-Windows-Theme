@@ -1,15 +1,15 @@
 import { createContext, useState } from 'react';
 const OpenAppContext = createContext();
-import ThisPCIcon from '../assets/icons/this-pc.ico';
-import CalcIcon from '../assets/icons/calc.png';
-import MyDocumentsIcon from '../assets/icons/my-documents.ico';
-import VSCodeIcon from '../assets/icons/vscode-icon.svg';
-import SpotifyIcon from '../assets/icons/spotify.svg';
-import TerminalIcon from '../assets/icons/terminal.svg';
-import ChromeIcon from '../assets/icons/chrome-icon.svg';
-import RecycleBinIcon from '../assets/icons/recycle-bin.ico';
-import NotepadIcon from '../assets/icons/notepad.ico';
-import LichessIcon from '../assets/icons/lichess-icon.svg';
+import ThisPCIcon from '@/assets/icons/this-pc.ico';
+import CalcIcon from '@/assets/icons/calc.png';
+import MyDocumentsIcon from '@/assets/icons/my-documents.ico';
+import VSCodeIcon from '@/assets/icons/vscode-icon.svg';
+import SpotifyIcon from '@/assets/icons/spotify.svg';
+import TerminalIcon from '@/assets/icons/terminal.svg';
+import ChromeIcon from '@/assets/icons/chrome-icon.svg';
+import RecycleBinIcon from '@/assets/icons/recycle-bin.ico';
+import NotepadIcon from '@/assets/icons/notepad.ico';
+import LichessIcon from '@/assets/icons/lichess-icon.svg';
 
 const apps = [
   {

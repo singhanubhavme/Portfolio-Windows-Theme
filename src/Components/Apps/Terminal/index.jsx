@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import CrossIcon from '../../../assets/icons/cross.svg';
-import MinimizeIcon from '../../../assets/icons/minimize.svg';
-import TerminalIcon from '../../../assets/icons/terminal.svg';
+import CrossIcon from '@/assets/icons/cross.svg';
+import MinimizeIcon from '@/assets/icons/minimize.svg';
+import TerminalIcon from '@/assets/icons/terminal.svg';
 import useOpenAppContext from '@/hooks/use-open-app-hook';
 import Draggable from 'react-draggable';
 import { ReactTerminal } from 'react-terminal';

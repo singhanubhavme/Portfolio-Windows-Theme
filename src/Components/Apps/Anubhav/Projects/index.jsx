@@ -1,11 +1,11 @@
 import Zoom from 'react-reveal/Zoom';
 import { AiOutlineClose } from 'react-icons/ai';
 import Card from './Card';
-import Project1Img from '../../../../assets/projects/project-1.png';
-import Project2Img from '../../../../assets/projects/project-2.png';
-import Project3Img from '../../../../assets/projects/project-3.png';
-import Project4Img from '../../../../assets/projects/project-4.png';
-import Project5Img from '../../../../assets/projects/project-5.png';
+import Project1Img from '@/assets/projects/project-1.png';
+import Project2Img from '@/assets/projects/project-2.png';
+import Project3Img from '@/assets/projects/project-3.png';
+import Project4Img from '@/assets/projects/project-4.png';
+import Project5Img from '@/assets/projects/project-5.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 import 'swiper/css';
@@ -65,36 +65,34 @@ const colors = [
 ];
 function Projects({ setShowProjects }) {
   return (
-    <div className="absolute z-[999]">
-      <div className="h-100 animated fadeIn faster fixed inset-0 z-50 flex w-full items-center justify-center overflow-hidden bg-[rgba(0,0,0,.7)]">
-        <Zoom duration={500}>
-          <div className="relative h-[80%] w-[85%] rounded-md bg-gray-900">
-            <AiOutlineClose
-              onClick={() => setShowProjects(false)}
-              className="absolute right-0 m-2 h-6 w-6 rounded-full text-white hover:cursor-pointer hover:bg-red-500"
-            />
-            <div className="my-8 text-center text-4xl font-[600] text-white">
-              My Projects
-            </div>
-            <div className="mx-14 flex flex-row justify-center pt-8">
-              <Swiper
-                modules={[Navigation]}
-                slidesPerView={3}
-                // spaceBetween={-50}
-                navigation
-              >
-                {projects.map((project, index) => (
-                  <SwiperSlide key={index}>
-                    <div>
-                      <Card project={project} index={index} colors={colors} />
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
+    <div className="fixed z-[999] inset-0 h-screen flex items-center justify-center overflow-hidden bg-[rgba(0,0,0,.7)]">
+      <Zoom duration={500}>
+        <div className="relative h-[80%] w-[85%] rounded-md bg-gray-900">
+          <AiOutlineClose
+            onClick={() => setShowProjects(false)}
+            className="absolute right-0 m-2 h-6 w-6 rounded-full text-white hover:cursor-pointer hover:bg-red-500"
+          />
+          <div className="my-8 text-center text-4xl font-[600] text-white">
+            My Projects
           </div>
-        </Zoom>
-      </div>
+          <div className="mx-14 flex flex-row justify-center pt-8">
+            <Swiper
+              modules={[Navigation]}
+              slidesPerView={3}
+              // spaceBetween={-50}
+              navigation
+            >
+              {projects.map((project, index) => (
+                <SwiperSlide key={index}>
+                  <div>
+                    <Card project={project} index={index} colors={colors} />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
+      </Zoom>
     </div>
   );
 }

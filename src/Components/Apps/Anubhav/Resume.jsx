@@ -3,8 +3,8 @@ import { AiOutlineClose } from 'react-icons/ai';
 
 function Resume({ setShowResume }) {
   return (
-    <div className="absolute z-[999]">
-      <div className="animated fadeIn faster fixed inset-0 z-50 flex h-full w-full bg-[rgba(0,0,0,.7)]">
+    <div className="absolute h-screen z-[999]">
+      <div className="animated fadeIn faster fixed inset-0 z-50 flex h-screen w-full bg-[rgba(0,0,0,.7)]">
         <Zoom duration={500}>
           <div className="flex flex-col">
             <AiOutlineClose

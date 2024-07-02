@@ -2,9 +2,9 @@
 import { Fragment, useEffect, useState } from 'react';
 import moment from 'moment';
 import Image from 'next/image';
-import LockScreenWallpaper from '../../assets/lock-screen-wallpaper.png';
-import WifiIcon from '../../assets/icons/wifi-icon.svg';
-import BatteryIcon from '../../assets/icons/battery-icon.svg';
+import LockScreenWallpaper from '@/assets/lock-screen-wallpaper.png';
+import WifiIcon from '@/assets/icons/wifi-icon.svg';
+import BatteryIcon from '@/assets/icons/battery-icon.svg';
 
 const LockScreen = () => {
   const [t1, setT1] = useState(moment().format('HH:mm'));

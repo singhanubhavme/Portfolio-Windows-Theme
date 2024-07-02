@@ -1,24 +1,24 @@
 import Image from 'next/image';
 import Zoom from 'react-reveal/Zoom';
 import { AiOutlineClose } from 'react-icons/ai';
-import BootstrapLogo from '../../../assets/tech-stack/bootstrap.svg';
-import CSSLogo from '../../../assets/tech-stack/css.svg';
-import EJSLogo from '../../../assets/tech-stack/ejs.svg';
-import ExpressLogo from '../../../assets/tech-stack/expressjs.svg';
-import GitLogo from '../../../assets/tech-stack/git.svg';
-import JavascriptLogo from '../../../assets/tech-stack/javascript.svg';
-import MaterialUILogo from '../../../assets/tech-stack/materialui.svg';
-import MongodbLogo from '../../../assets/tech-stack/mongodb.svg';
-import NodejsLogo from '../../../assets/tech-stack/nodejs.svg';
-import ReactLogo from '../../../assets/tech-stack/react.png';
-import JavaLogo from '../../../assets/tech-stack/java.svg';
-import PythonLogo from '../../../assets/tech-stack/python.svg';
-import TailwindLogo from '../../../assets/tech-stack/tailwind.svg';
-import NextLogo from '../../../assets/tech-stack/next.svg';
-import PptrLogo from '../../../assets/tech-stack/pptr.svg';
-import SolidityLogo from '../../../assets/tech-stack/solidity.svg';
-import PostmanLogo from '../../../assets/tech-stack/postman.svg';
-import HardhatLogo from '../../../assets/tech-stack/hardhat.svg';
+import BootstrapLogo from '@/assets/tech-stack/bootstrap.svg';
+import CSSLogo from '@/assets/tech-stack/css.svg';
+import EJSLogo from '@/assets/tech-stack/ejs.svg';
+import ExpressLogo from '@/assets/tech-stack/expressjs.svg';
+import GitLogo from '@/assets/tech-stack/git.svg';
+import JavascriptLogo from '@/assets/tech-stack/javascript.svg';
+import MaterialUILogo from '@/assets/tech-stack/materialui.svg';
+import MongodbLogo from '@/assets/tech-stack/mongodb.svg';
+import NodejsLogo from '@/assets/tech-stack/nodejs.svg';
+import ReactLogo from '@/assets/tech-stack/react.png';
+import JavaLogo from '@/assets/tech-stack/java.svg';
+import PythonLogo from '@/assets/tech-stack/python.svg';
+import TailwindLogo from '@/assets/tech-stack/tailwind.svg';
+import NextLogo from '@/assets/tech-stack/next.svg';
+import PptrLogo from '@/assets/tech-stack/pptr.svg';
+import SolidityLogo from '@/assets/tech-stack/solidity.svg';
+import PostmanLogo from '@/assets/tech-stack/postman.svg';
+import HardhatLogo from '@/assets/tech-stack/hardhat.svg';
 
 const itemData = [
   {
@@ -97,37 +97,35 @@ const itemData = [
 ];
 function Skills({ setShowSkills }) {
   return (
-    <div className="absolute z-[999]">
-      <div className="h-100 animated fadeIn faster fixed inset-0 z-50 flex w-full items-center justify-center overflow-hidden bg-[rgba(0,0,0,.7)]">
-        <Zoom duration={500}>
-          <div className="relative h-[70%] w-[70%] rounded-md bg-gray-900">
-            <AiOutlineClose
-              onClick={() => setShowSkills(false)}
-              className="absolute right-0 m-2 h-6 w-6 rounded-full text-white hover:cursor-pointer hover:bg-red-500"
-            />
-            <div className="my-8 text-center text-4xl font-[600] text-white">
-              My Tech Stack
-            </div>
-            <div className="tech-stacks">
-              <div className="flex flex-wrap items-center justify-center">
-                {itemData.map((item, index) => (
-                  <div
-                    className="text-center duration-200 ease-in hover:scale-75"
-                    key={index}
-                  >
-                    <Image
-                      src={item.img}
-                      className="mx-12 my-5 h-[55px] w-[60px]"
-                      alt={item.title}
-                    />
-                    <span className="text-[#e1d6e1]">{item.title}</span>
-                  </div>
-                ))}
-              </div>
+    <div className="fixed z-[999] inset-0 h-screen flex items-center justify-center overflow-hidden bg-[rgba(0,0,0,.7)]">
+      <Zoom duration={500}>
+        <div className="relative h-[70%] w-[70%] rounded-md bg-gray-900">
+          <AiOutlineClose
+            onClick={() => setShowSkills(false)}
+            className="absolute right-0 m-2 h-6 w-6 rounded-full text-white hover:cursor-pointer hover:bg-red-500"
+          />
+          <div className="my-8 text-center text-4xl font-[600] text-white">
+            My Tech Stack
+          </div>
+          <div className="tech-stacks">
+            <div className="flex flex-wrap items-center justify-center">
+              {itemData.map((item, index) => (
+                <div
+                  className="text-center duration-200 ease-in hover:scale-75"
+                  key={index}
+                >
+                  <Image
+                    src={item.img}
+                    className="mx-12 my-5 h-[55px] w-[60px]"
+                    alt={item.title}
+                  />
+                  <span className="text-[#e1d6e1]">{item.title}</span>
+                </div>
+              ))}
             </div>
           </div>
-        </Zoom>
-      </div>
+        </div>
+      </Zoom>
     </div>
   );
 }

@@ -1,19 +1,19 @@
 import { Fragment, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Header from './Header';
-import CrossIcon from '../../../assets/icons/cross.svg';
-import MinimizeIcon from '../../../assets/icons/minimize.svg';
-import RestoreIcon from '../../../assets/icons/restore.svg';
+import CrossIcon from '@/assets/icons/cross.svg';
+import MinimizeIcon from '@/assets/icons/minimize.svg';
+import RestoreIcon from '@/assets/icons/restore.svg';
 import useOpenAppContext from '@/hooks/use-open-app-hook';
 import AboutCard from './AboutCard';
-import EducationGif from '../../../assets/gif/education.json';
-import ExperienceGif from '../../../assets/gif/experience.json';
-import SkillsGif from '../../../assets/gif/skills.json';
-import ContactGif from '../../../assets/gif/contact.json';
-import BlogGif from '../../../assets/gif/blog.json';
-import ResumeGif from '../../../assets/gif/resume.json';
-import ProjectsGif from '../../../assets/gif/projects.json';
-import SocialsGif from '../../../assets/gif/socials.json';
+import EducationGif from '@/assets/gif/education.json';
+import ExperienceGif from '@/assets/gif/experience.json';
+import SkillsGif from '@/assets/gif/skills.json';
+import ContactGif from '@/assets/gif/contact.json';
+import BlogGif from '@/assets/gif/blog.json';
+import ResumeGif from '@/assets/gif/resume.json';
+import ProjectsGif from '@/assets/gif/projects.json';
+import SocialsGif from '@/assets/gif/socials.json';
 
 import Education from './Education';
 import Experience from './Experience';
@@ -45,23 +45,13 @@ const Anubhav = () => {
   return (
     <Fragment>
       {!loading && (
-        <div className="absolute z-50 h-[calc(100%-40px-33px)] w-[100%] bg-[#333333]">
+        <div className="absolute z-50 h-[calc(100vh-40px-33px)] w-[100%] bg-[#333333]">
           <div className="h-[33px] w-full bg-[#2D2D2D]">
             <div className="flex flex-row items-center justify-end">
               <div className="absolute left-1/2 mx-auto -translate-x-1/2 transform justify-center text-sm text-gray-400">
                 About Anubhav
               </div>
-              {showEducation && (
-                <Education setShowEducation={setShowEducation} />
-              )}
-              {showExperience && (
-                <Experience setShowExperience={setShowExperience} />
-              )}
-              {showSkills && <Skills setShowSkills={setShowSkills} />}
-              {showResume && <Resume setShowResume={setShowResume} />}
-              {showContact && <Contact setShowContact={setShowContact} />}
-              {showSocial && <Social setShowSocial={setShowSocial} />}
-              {showProjects && <Projects setShowProjects={setShowProjects} />}
+
               <div className="flex flex-row">
                 <Image
                   priority={true}
@@ -147,6 +137,14 @@ const Anubhav = () => {
           </div>
         </div>
       )}
+
+      {showEducation && <Education setShowEducation={setShowEducation} />}
+      {showExperience && <Experience setShowExperience={setShowExperience} />}
+      {showSkills && <Skills setShowSkills={setShowSkills} />}
+      {showResume && <Resume setShowResume={setShowResume} />}
+      {showContact && <Contact setShowContact={setShowContact} />}
+      {showSocial && <Social setShowSocial={setShowSocial} />}
+      {showProjects && <Projects setShowProjects={setShowProjects} />}
     </Fragment>
   );
 };

@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
-import SoundIcon from '../../assets/icons/sound-icon.svg';
-import WifiIcon from '../../assets/icons/wifi-icon.svg';
-import BatteryIcon from '../../assets/icons/battery-icon.svg';
-import ArrowIcon from '../../assets/icons/arrow-icon.svg';
+import SoundIcon from '@/assets/icons/sound-icon.svg';
+import WifiIcon from '@/assets/icons/wifi-icon.svg';
+import BatteryIcon from '@/assets/icons/battery-icon.svg';
+import ArrowIcon from '@/assets/icons/arrow-icon.svg';
 import Image from 'next/image';
 
 const TaskIcons = () => {
